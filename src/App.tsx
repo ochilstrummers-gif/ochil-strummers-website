@@ -6,6 +6,9 @@ import { FeaturesRow } from './components/FeaturesRow';
 import { Testimonials } from './components/Testimonials';
 import { EventsAndPhotosSection } from './components/EventsAndPhotosSection';
 import { JoinBanner } from './components/JoinBanner';
+import { AboutUsPage } from './components/AboutUsPage';
+import { EventsPage } from './components/EventsPage';
+import { JoinUsPage } from './components/JoinUsPage';
 import { SectionModals } from './components/SectionModals';
 
 export function App() {
@@ -14,16 +17,20 @@ export function App() {
 
   const handleNavClick = (navItem: string) => {
     setActiveNav(navItem);
-    if (navItem === 'CONTACT' || navItem === 'JOIN US') {
+    if (navItem === 'CONTACT') {
       setActiveModal('CONTACT');
+    } else if (navItem === 'JOIN US') {
+      setActiveModal(null); // Dedicated Join Us page view
     } else if (navItem === 'EVENTS') {
-      setActiveModal('EVENTS');
+      setActiveModal(null); // Dedicated page view instead of modal
     } else if (navItem === 'SONGBOOK') {
       setActiveModal('SONGBOOK');
     } else if (navItem === 'ABOUT US') {
-      setActiveModal('ABOUT');
+      setActiveModal(null); // Dedicated page view instead of modal
     } else if (navItem === 'GALLERY') {
       setActiveModal('GALLERY');
+    } else if (navItem === 'HOME') {
+      setActiveModal(null);
     }
   };
 
@@ -36,28 +43,47 @@ export function App() {
         onOpenContact={() => setActiveModal('CONTACT')}
       />
 
-      {/* Main Page Body matching the exact mockup */}
+      {/* Main Page Body */}
       <main className="flex-1">
-        {/* 2. Hero Section with Panoramic Ochil Hills & Ukulele Group */}
-        <Hero onOpenContact={() => setActiveModal('CONTACT')} />
+        {activeNav === 'ABOUT US' ? (
+          <AboutUsPage
+            onOpenContact={() => setActiveModal('CONTACT')}
+            onNavigateHome={() => handleNavClick('HOME')}
+          />
+        ) : activeNav === 'EVENTS' ? (
+          <EventsPage
+            onOpenContact={() => setActiveModal('CONTACT')}
+            onNavigateHome={() => handleNavClick('HOME')}
+          />
+        ) : activeNav === 'JOIN US' ? (
+          <JoinUsPage
+            onOpenContact={() => setActiveModal('CONTACT')}
+            onNavigateHome={() => handleNavClick('HOME')}
+          />
+        ) : (
+          <>
+            {/* 2. Hero Section with Panoramic Ochil Hills & Ukulele Group */}
+            <Hero onOpenContact={() => setActiveModal('CONTACT')} />
 
-        {/* 3. Thistle Intro Banner ("Music brings people together.") */}
-        <IntroBanner />
+            {/* 3. Thistle Intro Banner ("Music brings people together.") */}
+            <IntroBanner />
 
-        {/* 4. 4-Feature Columns Row (Beginners Welcome, Friendly Community, etc.) */}
-        <FeaturesRow />
+            {/* 4. 4-Feature Columns Row (Beginners Welcome, Friendly Community, etc.) */}
+            <FeaturesRow />
 
-        {/* 5. Member Testimonials */}
-        <Testimonials />
+            {/* 5. Member Testimonials */}
+            <Testimonials />
 
-        {/* 6. Upcoming Events & Latest Photos Split Grid */}
-        <EventsAndPhotosSection
-          onOpenEventsModal={() => setActiveModal('EVENTS')}
-          onOpenGalleryModal={() => setActiveModal('GALLERY')}
-        />
+            {/* 6. Upcoming Events & Latest Photos Split Grid */}
+            <EventsAndPhotosSection
+              onOpenEventsModal={() => handleNavClick('EVENTS')}
+              onOpenGalleryModal={() => setActiveModal('GALLERY')}
+            />
 
-        {/* 6. Footer Callout ("Ready to Join?") */}
-        <JoinBanner onOpenContact={() => setActiveModal('CONTACT')} />
+            {/* 7. Footer Callout ("Ready to Join?") */}
+            <JoinBanner onOpenContact={() => setActiveModal('CONTACT')} />
+          </>
+        )}
       </main>
 
       {/* Simple Footer */}
