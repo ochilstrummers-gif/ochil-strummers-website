@@ -28,10 +28,10 @@ export const NextSessionCard: React.FC<NextSessionCardProps> = ({ onOpenJoinModa
             <span>Weekly Practice Night</span>
           </div>
           <h2 className="text-3xl sm:text-4xl font-black text-[#0F172A] font-serif">
-            Join Us This Thursday Evening
+            Join Us This Monday Evening
           </h2>
           <p className="mt-2 text-base sm:text-lg text-[#1E293B]/80 font-medium">
-            Whether you've played for years or are picking up a ukulele for the first time, you'll find a warm welcome at Hills View Hall in Alva.
+            Whether you've played for years or are picking up a ukulele for the first time, you'll find a warm welcome at The Johnstone Arms Hotel in Alva.
           </p>
         </div>
 
@@ -47,7 +47,7 @@ export const NextSessionCard: React.FC<NextSessionCardProps> = ({ onOpenJoinModa
                 <h3 className="text-2xl font-black text-[#FAF5EE] font-serif mt-0.5">Alva Strum Night</h3>
               </div>
               <span className="bg-[#4C1D95] text-amber-300 px-3 py-1 rounded-full text-xs font-bold border border-[#DDD6FE]/30">
-                Weekly Thursday
+                Weekly Monday
               </span>
             </div>
 

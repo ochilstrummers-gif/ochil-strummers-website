@@ -90,7 +90,7 @@ const DEFAULT_GIG_EVENTS: GigEvent[] = [
     time: '1:00pm - 2:00pm',
     venue: 'Clackmannanshire Stroke Support Centre',
     location: 'Alloa, Clackmannanshire',
-    description: 'A cheerful afternoon music performance sharing uplifting folk tunes and old-time favorites for stroke survivors and caregivers.',
+    description: 'A cheerful afternoon music performance sharing uplifting folk tunes and old-time favourites for stroke survivors and caregivers.',
     isPublic: false,
     highlight: true
   },
@@ -364,6 +364,9 @@ export const EventsPage: React.FC<EventsPageProps> = ({ onOpenContact, onNavigat
             
             {/* Left Column: Heading and description */}
             <div className="max-w-3xl space-y-2 text-left">
+              <div className="inline-block bg-purple-900/60 text-purple-200 text-xs font-bold uppercase tracking-wider px-3.5 py-1 rounded-full border border-purple-700/50 mb-1">
+                UPCOMING GIGS &amp; REHEARSALS
+              </div>
               <h1 className="text-3xl sm:text-5xl font-black font-serif text-white tracking-tight">
                 Upcoming Events &amp; Gigs
               </h1>
@@ -398,7 +401,7 @@ export const EventsPage: React.FC<EventsPageProps> = ({ onOpenContact, onNavigat
             </h2>
 
             <p className="text-gray-700 text-base sm:text-lg leading-relaxed">
-              At Ochil Strummers, our favorite thing is bringing smiles and lively song to local people across Clackmannanshire and Stirling.
+              At Ochil Strummers, our favourite thing is bringing smiles and lively song to local people across Clackmannanshire and Stirling.
             </p>
 
             <p className="text-gray-700 text-base leading-relaxed">

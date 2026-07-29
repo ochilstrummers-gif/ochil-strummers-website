@@ -38,10 +38,9 @@ export const Hero: React.FC<HeroProps> = ({ onOpenContact }) => {
               </div>
 
               {/* Main Bold Headline */}
-              <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-black text-[#1A1A1A] tracking-tight leading-[1.08] font-serif">
-                Play Together.<br />
-                Laugh Together.<br />
-                <span className="text-[#692482]">Belong Together.</span>
+              <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-black text-[#3A1554] tracking-tight leading-[1.08] font-serif">
+                Play Together<br />
+                Laugh Together
               </h1>
             </div>
 

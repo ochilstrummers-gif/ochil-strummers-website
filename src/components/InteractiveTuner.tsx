@@ -10,7 +10,7 @@ export const InteractiveTuner: React.FC = () => {
   const handlePluckString = (key: string, freq: number) => {
     setActiveNote(key);
     setVibratingString(key);
-    playUkuleleNote(freq, 2.0);
+    playUkuleleNote(freq);
 
     setTimeout(() => {
       setVibratingString(null);
@@ -100,7 +100,7 @@ export const InteractiveTuner: React.FC = () => {
             </div>
 
             <p className="text-xs text-slate-400 text-center font-medium">
-              💡 Tip: Match your ukulele strings to these tones before joining us on Thursday!
+              💡 Tip: Match your ukulele strings to these tones before joining us on Monday!
             </p>
 
           </div>

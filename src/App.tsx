@@ -9,6 +9,7 @@ import { JoinBanner } from './components/JoinBanner';
 import { AboutPage } from './pages/AboutPage';
 import { EventsPage } from './components/EventsPage';
 import { JoinUsPage } from './components/JoinUsPage';
+import { JamNightPage } from './components/JamNightPage';
 import { SectionModals } from './components/SectionModals';
 
 export function App() {
@@ -21,6 +22,8 @@ export function App() {
       setActiveModal('CONTACT');
     } else if (navItem === 'JOIN US') {
       setActiveModal(null); // Dedicated Join Us page view
+    } else if (navItem === 'JAM NIGHT') {
+      setActiveModal(null); // Dedicated Jam Night page view
     } else if (navItem === 'EVENTS') {
       setActiveModal(null); // Dedicated page view instead of modal
     } else if (navItem === 'SONGBOOK') {
@@ -59,6 +62,12 @@ export function App() {
           <JoinUsPage
             onOpenContact={() => setActiveModal('CONTACT')}
             onNavigateHome={() => handleNavClick('HOME')}
+          />
+        ) : activeNav === 'JAM NIGHT' ? (
+          <JamNightPage
+            onOpenContact={() => setActiveModal('CONTACT')}
+            onNavigateHome={() => handleNavClick('HOME')}
+            onNavigateEvents={() => handleNavClick('EVENTS')}
           />
         ) : (
           <>

@@ -29,15 +29,15 @@ export const Footer: React.FC<FooterProps> = ({ onOpenJoinModal, onScrollToSecti
             </div>
 
             <p className="text-xs sm:text-sm text-slate-300 max-w-sm font-medium leading-relaxed">
-              Bringing folk together across Alva, Stirling, Tillicoultry, Menstrie, Alloa, and Dollar for weekly ukulele strum-alongs, singing, tea, and shortbread.
+              Bringing folk together across Alva, Stirling, Tillicoultry, Menstrie, Alloa, and Dollar for weekly ukulele strum-alongs, singing, and friendly blether.
             </p>
 
             <div className="text-xs text-slate-400 font-semibold space-y-1">
               <p className="flex items-center gap-2">
-                <MapPin className="w-3.5 h-3.5 text-amber-400" /> Alva Community Centre, Park Street, FK12 5LJ
+                <MapPin className="w-3.5 h-3.5 text-amber-400" /> The Johnstone Arms Hotel, 55 Stirling St, Alva FK12 5ED
               </p>
               <p className="flex items-center gap-2">
-                <Calendar className="w-3.5 h-3.5 text-amber-400" /> Thursdays @ 7:00 PM - 9:00 PM
+                <Calendar className="w-3.5 h-3.5 text-amber-400" /> Mondays @ 7:30 PM - 9:30 PM
               </p>
             </div>
           </div>
@@ -53,7 +53,7 @@ export const Footer: React.FC<FooterProps> = ({ onOpenJoinModal, onScrollToSecti
               </li>
               <li>
                 <button onClick={() => onScrollToSection('next-session')} className="hover:text-amber-300 transition-colors">
-                  Next Thursday Session
+                  Next Monday Session
                 </button>
               </li>
               <li>
@@ -83,7 +83,7 @@ export const Footer: React.FC<FooterProps> = ({ onOpenJoinModal, onScrollToSecti
           <div className="md:col-span-4 bg-[#1E293B] p-5 rounded-2xl border border-[#3B1F52] space-y-3">
             <h4 className="text-sm font-bold text-[#FAF5EE]">First Visit Free!</h4>
             <p className="text-xs text-slate-300">
-              Never played before? We have 8 loaner ukuleles waiting for you this Thursday evening.
+              Never played before? We have 8 loaner ukuleles waiting for you this Monday evening.
             </p>
             <button
               onClick={onOpenJoinModal}

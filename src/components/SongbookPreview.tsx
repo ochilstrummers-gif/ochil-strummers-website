@@ -99,7 +99,7 @@ export const SongbookPreview: React.FC = () => {
               <Sparkles className="w-5 h-5" />
             </div>
             <div>
-              <p className="font-bold text-base">Have a favorite Scottish or pop song?</p>
+              <p className="font-bold text-base">Have a favourite Scottish or pop song?</p>
               <p className="text-xs text-slate-300">We add new member requests to the songbook every month!</p>
             </div>
           </div>

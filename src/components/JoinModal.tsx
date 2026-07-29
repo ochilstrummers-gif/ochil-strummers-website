@@ -54,7 +54,7 @@ export const JoinModal: React.FC<JoinModalProps> = ({ isOpen, onClose }) => {
                 <span>First Session Free</span>
               </div>
               <h3 className="text-2xl font-black font-serif text-[#0F172A]">
-                Join Us This Thursday
+                Join Us This Monday
               </h3>
               <p className="text-xs text-[#1E293B]/80 font-medium mt-1">
                 {NEXT_SESSION.venue} • {NEXT_SESSION.time}
@@ -160,7 +160,7 @@ export const JoinModal: React.FC<JoinModalProps> = ({ isOpen, onClose }) => {
             </h3>
 
             <p className="text-sm text-[#1E293B] font-medium leading-relaxed">
-              We've saved a spot for you at <strong className="text-[#4C1D95]">Alva Community Centre</strong> this Thursday at 7:00 PM.
+              We've saved a spot for you at <strong className="text-[#4C1D95]">The Johnstone Arms Hotel</strong> this Monday at 7:30 PM.
               {formData.needsLoanerUke.includes('Yes') && (
                 <span className="block mt-2 font-bold text-[#4C1D95]">
                   🎸 A tuned loaner ukulele will be waiting for you!

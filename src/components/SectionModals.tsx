@@ -12,6 +12,8 @@ interface ModalProps {
 }
 
 export const SectionModals: React.FC<ModalProps> = ({ type, onClose }) => {
+  const [submitted, setSubmitted] = useState(false);
+
   if (!type) return null;
 
   if (type === 'CONTACT') {

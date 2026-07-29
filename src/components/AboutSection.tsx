@@ -91,7 +91,7 @@ export const AboutSection: React.FC<AboutSectionProps> = ({ onOpenJoinModal }) =
             <div className="space-y-2 pt-2">
               <div className="flex items-center gap-2 text-sm text-[#0F172A] font-semibold">
                 <CheckCircle2 className="w-5 h-5 text-[#4C1D95]" />
-                <span>8 Free loaner ukuleles reserved for newcomers every Thursday</span>
+                <span>8 Free loaner ukuleles reserved for newcomers every Monday</span>
               </div>
               <div className="flex items-center gap-2 text-sm text-[#0F172A] font-semibold">
                 <CheckCircle2 className="w-5 h-5 text-[#4C1D95]" />
@@ -99,7 +99,7 @@ export const AboutSection: React.FC<AboutSectionProps> = ({ onOpenJoinModal }) =
               </div>
               <div className="flex items-center gap-2 text-sm text-[#0F172A] font-semibold">
                 <CheckCircle2 className="w-5 h-5 text-[#4C1D95]" />
-                <span>Convenient parking at Alva Community Centre</span>
+                <span>Convenient venue at The Johnstone Arms Hotel, Alva</span>
               </div>
             </div>
 

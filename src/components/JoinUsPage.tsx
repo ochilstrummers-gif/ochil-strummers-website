@@ -13,7 +13,7 @@ import {
   ArrowRight 
 } from 'lucide-react';
 import logoBadge from '../assets/images/ochil_logo_badge_1785148841944.jpg';
-import groupPhoto from '../assets/images/ukulele_pub_session_1785257120765.jpg';
+import ochilUkuleleImg from '../assets/images/ochil_hero_ukulele_1785147316608.jpg';
 import indoorPhoto from '../assets/images/gallery_indoor_group_1785148867749.jpg';
 
 interface JoinUsPageProps {
@@ -32,6 +32,9 @@ export const JoinUsPage: React.FC<JoinUsPageProps> = ({ onOpenContact, onNavigat
             
             {/* Left Column: Title and text */}
             <div className="max-w-3xl space-y-2 text-left">
+              <div className="inline-block bg-purple-900/60 text-purple-200 text-xs font-bold uppercase tracking-wider px-3.5 py-1 rounded-full border border-purple-700/50 mb-1">
+                COME &amp; STRUM WITH US
+              </div>
               <h1 className="text-3xl sm:text-5xl font-black font-serif text-white tracking-tight">
                 Join Ochil Strummers
               </h1>
@@ -69,7 +72,7 @@ export const JoinUsPage: React.FC<JoinUsPageProps> = ({ onOpenContact, onNavigat
             </p>
 
             <p className="text-gray-700 text-base leading-relaxed">
-              There are no pressure auditions, no stressful tests, and no requirement to read traditional sheet music. We learn songbooks together, strum classic Scottish songs and pop hits, and take a half-time break for tea, shortbread, and friendly chatter!
+              There are no pressure auditions, no stressful tests, and no requirement to read traditional sheet music. We have our own songbook from where we strum classic ukulele songs to pop hits, and take a half-time break with a pint or soft drink, and friendly chatter!
             </p>
 
             {/* Feature Checklist */}
@@ -86,12 +89,12 @@ export const JoinUsPage: React.FC<JoinUsPageProps> = ({ onOpenContact, onNavigat
 
               <div className="flex items-center gap-3 bg-white p-3.5 rounded-xl border border-gray-200 shadow-xs">
                 <CheckCircle2 className="w-5 h-5 text-[#596C34] shrink-0" />
-                <span className="text-xs sm:text-sm font-bold text-gray-800">Thursdays 7:30pm in Alva</span>
+                <span className="text-xs sm:text-sm font-bold text-gray-800">Mondays 7:30pm in Alva</span>
               </div>
 
               <div className="flex items-center gap-3 bg-white p-3.5 rounded-xl border border-gray-200 shadow-xs">
                 <CheckCircle2 className="w-5 h-5 text-[#596C34] shrink-0" />
-                <span className="text-xs sm:text-sm font-bold text-gray-800">Tea, biscuits &amp; warm company</span>
+                <span className="text-xs sm:text-sm font-bold text-gray-800">Have a wee drink &amp; warm company</span>
               </div>
             </div>
 
@@ -120,8 +123,8 @@ export const JoinUsPage: React.FC<JoinUsPageProps> = ({ onOpenContact, onNavigat
           <div className="lg:col-span-5">
             <div className="relative rounded-3xl overflow-hidden shadow-xl border-4 border-white bg-[#2F1045] group">
               <img
-                src={groupPhoto}
-                alt="Ochil Strummers Group Session"
+                src={ochilUkuleleImg}
+                alt="Ukuleles at the Ochil Hills"
                 className="w-full h-[420px] object-cover group-hover:scale-105 transition-transform duration-500"
                 referrerPolicy="no-referrer"
               />
@@ -130,7 +133,7 @@ export const JoinUsPage: React.FC<JoinUsPageProps> = ({ onOpenContact, onNavigat
                 <p className="text-xs font-extrabold text-amber-300 uppercase tracking-wider">Weekly Jam Session</p>
                 <h3 className="text-lg font-bold">The Johnstone Arms Hotel, Alva</h3>
                 <p className="text-xs text-purple-200">
-                  Come along any Thursday at 7:30pm and strum along with us!
+                  Come along any Monday at 7:30pm and strum along with us!
                 </p>
               </div>
             </div>
@@ -165,7 +168,7 @@ export const JoinUsPage: React.FC<JoinUsPageProps> = ({ onOpenContact, onNavigat
               </div>
               <h3 className="text-lg font-bold text-[#3A1554]">When &amp; Where</h3>
               <p className="text-xs sm:text-sm text-gray-700 leading-relaxed">
-                We meet every Thursday evening from <strong>7:30pm to 9:30pm</strong> in the function room at <strong>The Johnstone Arms Hotel</strong>, 55 Stirling St, Alva FK12 5ED.
+                We meet every Monday evening from <strong>7:30pm to 9:30pm</strong> in the function room at <strong>The Johnstone Arms Hotel</strong>, 55 Stirling St, Alva FK12 5ED.
               </p>
             </div>
 
@@ -185,9 +188,9 @@ export const JoinUsPage: React.FC<JoinUsPageProps> = ({ onOpenContact, onNavigat
               <div className="w-12 h-12 rounded-xl bg-[#3A1554] text-white flex items-center justify-center font-bold">
                 <Coffee className="w-6 h-6" />
               </div>
-              <h3 className="text-lg font-bold text-[#3A1554]">Half-time Tea &amp; Chat</h3>
+              <h3 className="text-lg font-bold text-[#3A1554]">Half-Time Drink &amp; Chat</h3>
               <p className="text-xs sm:text-sm text-gray-700 leading-relaxed">
-                Halfway through our practice, we stop for tea, coffee, biscuits, and a friendly blether. It's a great opportunity to get to know everyone!
+                Halfway through our practice, we stop for a drink and a friendly blether. It’s a great opportunity to get to know everyone!
               </p>
             </div>
 
@@ -200,7 +203,7 @@ export const JoinUsPage: React.FC<JoinUsPageProps> = ({ onOpenContact, onNavigat
                 Ready to strum along with us?
               </h3>
               <p className="text-purple-100 text-sm sm:text-base max-w-xl">
-                Send us a quick message to let us know you're coming or to request a loaner ukulele for Thursday night!
+                Send us a quick message to let us know you're coming or to request a loaner ukulele for Monday night!
               </p>
             </div>
 

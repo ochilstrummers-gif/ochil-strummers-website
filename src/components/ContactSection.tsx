@@ -41,8 +41,8 @@ export const ContactSection: React.FC<ContactSectionProps> = ({ onOpenJoinModal 
               <div className="flex items-start gap-3 pt-2 border-t border-[#3B1F52]">
                 <Clock className="w-5 h-5 text-amber-400 shrink-0 mt-0.5" />
                 <div>
-                  <p className="font-bold text-[#FAF5EE] text-sm">Every Thursday Evening</p>
-                  <p className="text-xs text-slate-300">Doors open 6:45 PM • Strumming 7:00 PM - 9:00 PM</p>
+                  <p className="font-bold text-[#FAF5EE] text-sm">Every Monday Evening</p>
+                  <p className="text-xs text-slate-300">Doors open 7:15 PM • Strumming 7:30 PM - 9:30 PM</p>
                 </div>
               </div>
 

@@ -82,7 +82,7 @@ export const AboutUsPage: React.FC<AboutUsPageProps> = ({
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 items-start">
           
           {/* Left Text Column */}
-          <div className="lg:col-span-7 space-y-6 text-gray-700 text-base sm:text-lg leading-relaxed">
+          <div className="lg:col-span-7 space-y-5 text-gray-700 text-sm sm:text-base leading-relaxed">
             <p>
               <strong className="text-[#3A1554] font-bold">Ochil Strummers</strong> is a friendly, vibrant community ukulele group proudly based in Clackmannanshire, Scotland, at the foot of the magnificent Ochil Hills.
             </p>
@@ -92,7 +92,7 @@ export const AboutUsPage: React.FC<AboutUsPageProps> = ({
             </p>
 
             <p>
-              The band is built on friendship, fun and making music together. There are no intimidating auditions or strict music-reading requirements—just easy-to-follow song sheets, friendly encouragement, and plenty of laughs over a cup of tea during our weekly sessions.
+              The band is built on friendship, fun and making music together. There are no intimidating auditions or strict music-reading requirements, just easy-to-follow song sheets, friendly encouragement, and plenty of laughs over a pint or soft drink during our weekly sessions
             </p>
 
             <p>
@@ -100,8 +100,8 @@ export const AboutUsPage: React.FC<AboutUsPageProps> = ({
             </p>
 
             {/* Quote / Highlight Box */}
-            <div className="mt-8 p-6 sm:p-8 bg-[#F5F2EA]/80 rounded-2xl border-l-4 border-[#3A1554] shadow-xs">
-              <p className="text-gray-800 text-base sm:text-lg leading-relaxed font-normal">
+            <div className="mt-6 p-5 sm:p-7 bg-[#F5F2EA]/80 rounded-2xl border-l-4 border-[#3A1554] shadow-xs">
+              <p className="text-gray-800 text-sm sm:text-base leading-relaxed font-normal">
                 Whether we're rehearsing on a Monday evening, entertaining audiences at community events, supporting local charities, or simply enjoying making music together, our aim is always the same—to create a welcoming place where friendships grow, confidence flourishes and everyone can enjoy the magic of playing the ukulele.
               </p>
             </div>
@@ -111,8 +111,8 @@ export const AboutUsPage: React.FC<AboutUsPageProps> = ({
           <div className="lg:col-span-5 relative mt-2 lg:mt-0">
             <div className="relative rounded-[28px] overflow-hidden shadow-2xl bg-[#3A1554]">
               <img
-                src={thistlePhoto}
-                alt="Strumming under the Ochils - Scottish Thistle"
+                src={pubSessionPhoto}
+                alt="The Johnstone Arms, Alva - Ochil Strummers Rehearsal Home"
                 className="w-full h-[450px] sm:h-[520px] object-cover"
                 referrerPolicy="no-referrer"
               />
@@ -120,10 +120,10 @@ export const AboutUsPage: React.FC<AboutUsPageProps> = ({
               {/* Bottom Gradient Overlay & Text */}
               <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-[#2A0F3D] via-[#2A0F3D]/80 to-transparent p-6 sm:p-8 pt-16 text-white">
                 <h3 className="text-2xl sm:text-3xl font-serif font-bold text-white mb-1">
-                  Strumming under the Ochils
+                  The Johnstone Arms, Alva
                 </h3>
                 <p className="text-amber-200 text-sm font-medium">
-                  Bringing music, smiles, and friendship to Central Scotland
+                  Our friendly Monday evening rehearsal home
                 </p>
               </div>
             </div>
@@ -391,7 +391,7 @@ export const AboutUsPage: React.FC<AboutUsPageProps> = ({
               Warm Scottish Hospitality
             </h3>
             <p className="text-gray-600 text-sm leading-relaxed">
-              Our rehearsals always feature a half-time break with tea, biscuits, and friendly chat. It's as much a social club as a musical group.
+              Our rehearsals always feature a half-time break with either a pint or soft drink and friendly chat. It's as much a social club as a musical group.
             </p>
           </div>
 
