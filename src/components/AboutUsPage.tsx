@@ -1,280 +1,334 @@
 import React from 'react';
-import { Heart, Coffee, Users, Award, Sparkles, CheckCircle2, ArrowLeft, MapPin, Calendar, Music, Mail, HelpCircle, ShieldCheck } from 'lucide-react';
-import groupPhoto from '../assets/images/ukulele_pub_session_1785257120765.jpg';
-import indoorGroupPhoto from '../assets/images/gallery_indoor_group_1785148867749.jpg';
-import womenStrummersPhoto from '../assets/images/gallery_women_strummers_1785148893490.jpg';
-import monumentPhoto from '../assets/images/gallery_outdoor_monument_1785148882137.jpg';
-import thistleImg from '../assets/images/thistle.png';
+import { 
+  Smile, 
+  Users, 
+  Mic, 
+  Star, 
+  Sparkles, 
+  Heart, 
+  Music, 
+  ShieldCheck, 
+  Calendar, 
+  Clock, 
+  MapPin, 
+  ArrowRight, 
+  UserPlus, 
+  CheckCircle2, 
+  Coffee, 
+  BookOpen 
+} from 'lucide-react';
 
-interface AboutUsPageProps {
-  onOpenContact: () => void;
-  onNavigateHome: () => void;
+import logoBadge from '../assets/images/ochil_logo_badge_1785148841944.jpg';
+import thistlePhoto from '../assets/images/gallery_thistle_flower_1785148905098.jpg';
+import pubSessionPhoto from '../assets/images/ukulele_pub_session_1785257120765.jpg';
+
+export interface AboutUsPageProps {
+  onOpenContact?: () => void;
+  onNavigateHome?: () => void;
+  onOpenFreeTasterModal?: () => void;
 }
 
-export const AboutUsPage: React.FC<AboutUsPageProps> = ({ onOpenContact, onNavigateHome }) => {
+export const AboutUsPage: React.FC<AboutUsPageProps> = ({ 
+  onOpenContact = () => {}, 
+  onNavigateHome = () => {},
+  onOpenFreeTasterModal
+}) => {
+  const handleTasterClick = () => {
+    if (onOpenFreeTasterModal) {
+      onOpenFreeTasterModal();
+    } else {
+      onOpenContact();
+    }
+  };
+
   return (
-    <div className="bg-[#F4F2E9] text-[#1A1A1A] min-h-screen">
+    <div className="bg-[#FAF8F5] text-[#1A1A1A] min-h-screen font-sans pb-20">
       
-      {/* 1. Page Header / Hero Banner */}
-      <section className="relative bg-[#3A1554] text-white py-12 sm:py-16 overflow-hidden">
-        {/* Background thistle watermarks */}
-        <div className="absolute left-4 top-1/2 -translate-y-1/2 w-32 h-40 opacity-15 pointer-events-none">
-          <img src={thistleImg} alt="" className="w-full h-full object-contain filter brightness-0 invert" />
-        </div>
-        <div className="absolute right-4 top-1/2 -translate-y-1/2 w-32 h-40 opacity-15 pointer-events-none">
-          <img src={thistleImg} alt="" className="w-full h-full object-contain filter brightness-0 invert scale-x-[-1]" />
-        </div>
-
+      {/* 0. Top Page Header Banner */}
+      <section className="relative bg-[#3A1554] text-white py-6 sm:py-8 border-b border-purple-900/40">
         <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          {/* Back Button */}
-          <button
-            onClick={onNavigateHome}
-            className="inline-flex items-center gap-2 text-purple-200 hover:text-white text-xs sm:text-sm font-bold uppercase tracking-wider mb-6 transition-colors bg-purple-900/40 px-3.5 py-1.5 rounded-full border border-purple-400/20"
-          >
-            <ArrowLeft className="w-4 h-4" />
-            <span>Back to Home</span>
-          </button>
-
-          <div className="max-w-3xl space-y-3">
-            <div className="inline-flex items-center gap-2 bg-[#596C34] text-white px-3.5 py-1 rounded-full text-xs font-bold uppercase tracking-wider">
-              <Heart className="w-3.5 h-3.5 fill-current" />
-              <span>Our Ethos &amp; Story</span>
+          <div className="flex flex-col md:flex-row items-center justify-between gap-6">
+            
+            {/* Left Column: Title and description */}
+            <div className="max-w-3xl space-y-2 text-left">
+              <div className="inline-block bg-purple-900/60 text-purple-200 text-xs font-bold uppercase tracking-wider px-3.5 py-1 rounded-full border border-purple-700/50 mb-1">
+                OUR HERITAGE &amp; COMMUNITY
+              </div>
+              <h1 className="text-3xl sm:text-5xl font-black font-serif text-white tracking-tight">
+                Our Story So Far
+              </h1>
+              <p className="text-purple-100 text-base sm:text-lg font-medium leading-relaxed max-w-2xl">
+                Learn about Ochil Strummers — a friendly, vibrant community ukulele group proudly based in Clackmannanshire, Scotland, at the foot of the magnificent Ochil Hills.
+              </p>
             </div>
-            <h1 className="text-3xl sm:text-5xl font-black font-serif text-white tracking-tight">
-              About Ochil Strummers
-            </h1>
-            <p className="text-purple-100 text-base sm:text-lg font-medium leading-relaxed">
-              Central Scotland's friendliest ukulele club — bringing people together across Alva, Tillicoultry, Dollar, Alloa, and Stirling through music, laughter, and warm Scottish hospitality.
-            </p>
+
+            {/* Right Column: Logo badge */}
+            <div className="shrink-0">
+              <img
+                src={logoBadge}
+                alt="Ochil Strummers Logo"
+                className="w-24 h-24 sm:w-32 sm:h-32 rounded-full border-4 border-white/20 shadow-lg object-cover"
+                referrerPolicy="no-referrer"
+              />
+            </div>
+
           </div>
         </div>
       </section>
 
-      {/* 2. Main Story & Image Showcase */}
-      <section className="py-12 sm:py-16 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 items-center">
+      {/* 1. SECTION: OUR STORY SO FAR CONTENT */}
+      <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-10 sm:pt-14 pb-16">
+        
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 items-start">
           
-          {/* Left: Group Photo Card */}
-          <div className="lg:col-span-5 relative">
-            <div className="relative rounded-3xl overflow-hidden shadow-xl border-4 border-white bg-[#2F1045]">
+          {/* Left Text Column */}
+          <div className="lg:col-span-7 space-y-6 text-gray-700 text-base sm:text-lg leading-relaxed">
+            <p>
+              <strong className="text-[#3A1554] font-bold">Ochil Strummers</strong> is a friendly, vibrant community ukulele group proudly based in Clackmannanshire, Scotland, at the foot of the magnificent Ochil Hills.
+            </p>
+
+            <p>
+              We welcome everyone, from complete beginners who have never held an instrument before to experienced players looking for a lively group to play, sing and socialise with.
+            </p>
+
+            <p>
+              The band is built on friendship, fun and making music together. There are no intimidating auditions or strict music-reading requirements—just easy-to-follow song sheets, friendly encouragement, and plenty of laughs over a cup of tea during our weekly sessions.
+            </p>
+
+            <p>
+              Established in 2025, Ochil Strummers is proudly committee-led, with the day-to-day running of the band shared by a dedicated team of volunteers. We believe in openness, accountability and transparency, with members' subscriptions and fundraising income carefully managed and reinvested back into the band to benefit everyone.
+            </p>
+
+            {/* Quote / Highlight Box */}
+            <div className="mt-8 p-6 sm:p-8 bg-[#F5F2EA]/80 rounded-2xl border-l-4 border-[#3A1554] shadow-xs">
+              <p className="text-gray-800 text-base sm:text-lg leading-relaxed font-normal">
+                Whether we're rehearsing on a Monday evening, entertaining audiences at community events, supporting local charities, or simply enjoying making music together, our aim is always the same—to create a welcoming place where friendships grow, confidence flourishes and everyone can enjoy the magic of playing the ukulele.
+              </p>
+            </div>
+          </div>
+
+          {/* Right Image Card Column */}
+          <div className="lg:col-span-5 relative mt-2 lg:mt-0">
+            <div className="relative rounded-[28px] overflow-hidden shadow-2xl bg-[#3A1554]">
               <img
-                src={groupPhoto}
-                alt="Ochil Strummers Ukulele Group"
-                className="w-full h-[400px] object-cover"
+                src={thistlePhoto}
+                alt="Strumming under the Ochils - Scottish Thistle"
+                className="w-full h-[450px] sm:h-[520px] object-cover"
                 referrerPolicy="no-referrer"
               />
               
-              {/* Overlay Badge */}
-              <div className="absolute bottom-4 left-4 right-4 bg-[#2F1045]/90 backdrop-blur-md p-4 rounded-2xl border border-purple-400/30 text-white">
-                <p className="text-xs font-extrabold text-amber-300 uppercase tracking-wider">Scottish Community</p>
-                <p className="text-sm font-bold mt-0.5">Established at the foot of the Ochil Hills</p>
+              {/* Bottom Gradient Overlay & Text */}
+              <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-[#2A0F3D] via-[#2A0F3D]/80 to-transparent p-6 sm:p-8 pt-16 text-white">
+                <h3 className="text-2xl sm:text-3xl font-serif font-bold text-white mb-1">
+                  Strumming under the Ochils
+                </h3>
+                <p className="text-amber-200 text-sm font-medium">
+                  Bringing music, smiles, and friendship to Central Scotland
+                </p>
               </div>
             </div>
-          </div>
-
-          {/* Right: Story Content */}
-          <div className="lg:col-span-7 space-y-5">
-            <h2 className="text-2xl sm:text-3xl font-black font-serif text-[#3A1554]">
-              "If you can hold it, you can strum it!"
-            </h2>
-            
-            <p className="text-gray-700 text-base leading-relaxed">
-              Ochil Strummers was formed with a simple goal: to create a warm, welcoming, and completely pressure-free environment where anyone can learn and enjoy playing the ukulele.
-            </p>
-
-            <p className="text-gray-700 text-base leading-relaxed">
-              Whether you picked up a ukulele yesterday or have been playing for decades, our weekly sessions at <strong>The Johnstone Arms Hotel in Alva</strong> provide a relaxed space to sing along to traditional Scottish songs, classic pop hits, and folk favorites.
-            </p>
-
-            {/* Checklist items */}
-            <div className="space-y-2.5 pt-2">
-              <div className="flex items-center gap-3 text-sm text-gray-800 font-semibold">
-                <CheckCircle2 className="w-5 h-5 text-[#596C34] shrink-0" />
-                <span>Zero auditions or sheet-music reading required</span>
-              </div>
-              <div className="flex items-center gap-3 text-sm text-gray-800 font-semibold">
-                <CheckCircle2 className="w-5 h-5 text-[#596C34] shrink-0" />
-                <span>Free loaner ukuleles reserved for absolute beginners</span>
-              </div>
-              <div className="flex items-center gap-3 text-sm text-gray-800 font-semibold">
-                <CheckCircle2 className="w-5 h-5 text-[#596C34] shrink-0" />
-                <span>Half-time tea, coffee, and shortbread included every week</span>
-              </div>
-              <div className="flex items-center gap-3 text-sm text-gray-800 font-semibold">
-                <CheckCircle2 className="w-5 h-5 text-[#596C34] shrink-0" />
-                <span>Community performances at local care homes, galas, and charity events</span>
-              </div>
-            </div>
-
-            <div className="pt-4 flex flex-wrap gap-4">
-              <button
-                onClick={onOpenContact}
-                className="bg-[#596C34] hover:bg-[#4C5E2C] text-white px-6 py-3 rounded-xl font-bold text-sm shadow-md transition-all flex items-center gap-2"
-              >
-                <Mail className="w-4 h-4" />
-                <span>Get In Touch To Join</span>
-              </button>
-            </div>
-
           </div>
 
         </div>
       </section>
 
-      {/* 3. Club Pillars / Values Grid */}
-      <section className="bg-white py-12 sm:py-16 border-t border-b border-gray-200">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <hr className="border-gray-200 max-w-7xl mx-auto my-4 opacity-60" />
+
+      {/* 2. SECTION: OUR JOURNEY */}
+      <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 sm:py-16">
+        <h2 className="text-3xl sm:text-4xl font-serif font-bold text-[#3A1554] mb-8">
+          Our Journey
+        </h2>
+
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
           
-          <div className="text-center max-w-2xl mx-auto mb-12">
-            <h2 className="text-2xl sm:text-4xl font-black font-serif text-[#3A1554]">
-              What Makes Our Club Special
-            </h2>
-            <p className="text-gray-600 text-sm sm:text-base mt-2">
-              Four simple pillars that guide everything we do every week
-            </p>
+          {/* Journey Card 1 */}
+          <div className="bg-[#FAF8F5] bg-gradient-to-b from-[#F7F4EC] to-[#FAF8F5] p-6 sm:p-7 rounded-2xl border border-gray-200/80 shadow-xs flex flex-col justify-between">
+            <div>
+              <div className="w-12 h-12 rounded-2xl bg-white border border-gray-200/80 flex items-center justify-center text-[#3A1554] mb-6 shadow-2xs">
+                <Sparkles className="w-5 h-5" />
+              </div>
+              <h3 className="text-xl font-serif font-bold text-[#3A1554] mb-3">
+                2025 – A New Beginning
+              </h3>
+              <p className="text-gray-600 text-sm leading-relaxed">
+                Ochil Strummers was established as a committee-led community ukulele group, creating a welcoming, inclusive environment where people of all abilities could enjoy making music together.
+              </p>
+            </div>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-            
-            <div className="bg-[#FAF9F5] p-6 rounded-2xl border border-gray-200 space-y-3">
-              <div className="w-12 h-12 rounded-xl bg-[#3A1554] text-white flex items-center justify-center font-bold">
-                <Users className="w-6 h-6" />
+          {/* Journey Card 2 */}
+          <div className="bg-[#FAF8F5] bg-gradient-to-b from-[#F7F4EC] to-[#FAF8F5] p-6 sm:p-7 rounded-2xl border border-gray-200/80 shadow-xs flex flex-col justify-between">
+            <div>
+              <div className="w-12 h-12 rounded-2xl bg-white border border-gray-200/80 flex items-center justify-center text-[#3A1554] mb-6 shadow-2xs">
+                <Users className="w-5 h-5" />
               </div>
-              <h3 className="font-bold text-lg text-gray-900 font-serif">1. Everyone Welcome</h3>
-              <p className="text-xs sm:text-sm text-gray-600 leading-relaxed">
-                No auditions, no tests, and no experience needed. People of all ages and backgrounds join together to play.
+              <h3 className="text-xl font-serif font-bold text-[#3A1554] mb-3">
+                2025 – Building a Community
+              </h3>
+              <p className="text-gray-600 text-sm leading-relaxed">
+                Weekly rehearsals, social events and performances quickly brought together a growing group of enthusiastic players, united by a shared love of music, friendship and fun.
               </p>
             </div>
+          </div>
 
-            <div className="bg-[#FAF9F5] p-6 rounded-2xl border border-gray-200 space-y-3">
-              <div className="w-12 h-12 rounded-xl bg-[#596C34] text-white flex items-center justify-center font-bold">
-                <Coffee className="w-6 h-6" />
+          {/* Journey Card 3 */}
+          <div className="bg-[#FAF8F5] bg-gradient-to-b from-[#F7F4EC] to-[#FAF8F5] p-6 sm:p-7 rounded-2xl border border-gray-200/80 shadow-xs flex flex-col justify-between">
+            <div>
+              <div className="w-12 h-12 rounded-2xl bg-white border border-gray-200/80 flex items-center justify-center text-[#3A1554] mb-6 shadow-2xs">
+                <Mic className="w-5 h-5" />
               </div>
-              <h3 className="font-bold text-lg text-gray-900 font-serif">2. The Half-Time Blether</h3>
-              <p className="text-xs sm:text-sm text-gray-600 leading-relaxed">
-                Music is only half the fun! We pause mid-session for tea, coffee, Scottish shortbread, and friendly chats.
+              <h3 className="text-xl font-serif font-bold text-[#3A1554] mb-3">
+                2025–2026 – Performing for the Community
+              </h3>
+              <p className="text-gray-600 text-sm leading-relaxed">
+                The band began entertaining audiences at local events, charity fundraisers, care homes, festivals and community venues across Central Scotland, helping to spread smiles through music while supporting worthwhile causes.
               </p>
             </div>
+          </div>
 
-            <div className="bg-[#FAF9F5] p-6 rounded-2xl border border-gray-200 space-y-3">
-              <div className="w-12 h-12 rounded-xl bg-[#3A1554] text-white flex items-center justify-center font-bold">
-                <Music className="w-6 h-6" />
+          {/* Journey Card 4 */}
+          <div className="bg-[#FAF8F5] bg-gradient-to-b from-[#F7F4EC] to-[#FAF8F5] p-6 sm:p-7 rounded-2xl border border-gray-200/80 shadow-xs flex flex-col justify-between">
+            <div>
+              <div className="w-12 h-12 rounded-2xl bg-white border border-gray-200/80 flex items-center justify-center text-[#3A1554] mb-6 shadow-2xs">
+                <Star className="w-5 h-5" />
               </div>
-              <h3 className="font-bold text-lg text-gray-900 font-serif">3. Diverse Songbook</h3>
-              <p className="text-xs sm:text-sm text-gray-600 leading-relaxed">
-                From Scottish folk classics like <i>Wild Mountain Thyme</i> to upbeat 60s pop and modern tunes.
+              <h3 className="text-xl font-serif font-bold text-[#3A1554] mb-3">
+                Today
+              </h3>
+              <p className="text-gray-600 text-sm leading-relaxed">
+                Ochil Strummers continues to grow, welcoming new members of all ages and abilities. Our vision remains simple: to provide a friendly place where everyone can learn, laugh, perform and enjoy making music together.
               </p>
             </div>
-
-            <div className="bg-[#FAF9F5] p-6 rounded-2xl border border-gray-200 space-y-3">
-              <div className="w-12 h-12 rounded-xl bg-[#596C34] text-white flex items-center justify-center font-bold">
-                <Award className="w-6 h-6" />
-              </div>
-              <h3 className="font-bold text-lg text-gray-900 font-serif">4. Community Spirit</h3>
-              <p className="text-xs sm:text-sm text-gray-600 leading-relaxed">
-                We perform at local care homes, charity fundraisers, and community galas to spread joy through music.
-              </p>
-            </div>
-
           </div>
 
         </div>
       </section>
 
-      {/* 4. Photo Gallery Highlights */}
-      <section className="py-12 sm:py-16 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center max-w-2xl mx-auto mb-10">
-          <h2 className="text-2xl sm:text-3xl font-black font-serif text-[#3A1554]">
-            Life at Ochil Strummers
+      {/* 3. SECTION: OUR MISSION */}
+      <section className="bg-[#F6F3EB] py-16 border-t border-b border-gray-200/60">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+          
+          <div className="mb-3">
+            <span className="inline-block bg-[#EAE4D7] text-[#3A1554] text-xs font-bold uppercase tracking-wider px-4 py-1.5 rounded-full">
+              OUR AIMS &amp; VALUES
+            </span>
+          </div>
+
+          <h2 className="text-3xl sm:text-5xl font-serif font-bold text-[#3A1554] mb-4">
+            Our Mission
           </h2>
-          <p className="text-gray-600 text-xs sm:text-sm mt-1">
-            Snapshots from our weekly sessions and outings across Clackmannanshire
+
+          <p className="text-gray-700 text-base sm:text-lg max-w-3xl mx-auto mb-12 leading-relaxed">
+            At Ochil Strummers, our core purpose goes beyond just learning chords — we aim to create a welcoming musical home where everyone can thrive.
           </p>
-        </div>
 
-        <div className="grid grid-cols-1 sm:grid-cols-3 gap-6">
-          <div className="rounded-2xl overflow-hidden shadow-md border border-gray-200 bg-white">
-            <img src={indoorGroupPhoto} alt="Indoor strum session" className="w-full h-56 object-cover" />
-            <div className="p-4">
-              <h3 className="font-bold text-sm text-gray-900">Weekly Gatherings</h3>
-              <p className="text-xs text-gray-500 mt-1">Strumming together in a warm, relaxed atmosphere.</p>
-            </div>
-          </div>
-
-          <div className="rounded-2xl overflow-hidden shadow-md border border-gray-200 bg-white">
-            <img src={womenStrummersPhoto} alt="Strummers rehearsing" className="w-full h-56 object-cover" />
-            <div className="p-4">
-              <h3 className="font-bold text-sm text-gray-900">Friendly &amp; Inclusive</h3>
-              <p className="text-xs text-gray-500 mt-1">Members supporting each other with chord tips and smiles.</p>
-            </div>
-          </div>
-
-          <div className="rounded-2xl overflow-hidden shadow-md border border-gray-200 bg-white">
-            <img src={monumentPhoto} alt="Outdoor community performance" className="w-full h-56 object-cover" />
-            <div className="p-4">
-              <h3 className="font-bold text-sm text-gray-900">Community Outings</h3>
-              <p className="text-xs text-gray-500 mt-1">Sharing music at local Scottish landmarks and galas.</p>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* 5. Group Leadership / Committee Section (Ready for user to populate) */}
-      <section className="bg-[#FAF9F5] py-12 sm:py-16 border-t border-gray-200">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          
-          <div className="text-center max-w-2xl mx-auto mb-10">
-            <span className="text-xs font-bold uppercase tracking-wider text-[#596C34]">Meet The Team</span>
-            <h2 className="text-2xl sm:text-3xl font-black font-serif text-[#3A1554] mt-1">
-              Group Organisers &amp; Song Leaders
-            </h2>
-            <p className="text-gray-600 text-xs sm:text-sm mt-1">
-              The volunteers who keep Ochil Strummers running smoothly every week
-            </p>
-          </div>
-
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 max-w-5xl mx-auto">
+          {/* Mission Cards: Top 3 Cards, Bottom 2 Cards Centered */}
+          <div className="space-y-6">
             
-            {/* Organiser Card 1 */}
-            <div className="bg-white p-6 rounded-2xl border border-gray-200 shadow-xs text-center space-y-3">
-              <div className="w-20 h-20 rounded-full bg-purple-100 text-[#3A1554] flex items-center justify-center mx-auto border-2 border-purple-300 font-bold text-xl">
-                OS
+            {/* Top Row: 3 Cards */}
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-6 text-left">
+              
+              {/* Aim 1 */}
+              <div className="bg-white p-7 rounded-2xl border border-gray-200/80 shadow-xs flex flex-col justify-between">
+                <div>
+                  <div className="w-12 h-12 rounded-2xl bg-[#F6F3EB] flex items-center justify-center text-[#3A1554] mb-6">
+                    <Smile className="w-5 h-5" />
+                  </div>
+                  <h3 className="text-xl font-serif font-bold text-[#3A1554] mb-3">
+                    Inclusive Music Making
+                  </h3>
+                  <p className="text-gray-600 text-sm leading-relaxed">
+                    To provide a supportive, welcoming environment where people of all musical backgrounds, from complete beginners to seasoned strummers, can play together without fear or pressure.
+                  </p>
+                </div>
+                <div className="pt-6 mt-6 border-t border-gray-100 flex items-center justify-between text-xs font-bold text-[#3A1554]">
+                  <span>Aim #1</span>
+                  <CheckCircle2 className="w-4 h-4 text-emerald-600" />
+                </div>
               </div>
-              <div>
-                <h3 className="font-bold text-base text-gray-900">Group Coordinator</h3>
-                <p className="text-xs text-[#596C34] font-semibold">Organiser &amp; Host</p>
+
+              {/* Aim 2 */}
+              <div className="bg-white p-7 rounded-2xl border border-gray-200/80 shadow-xs flex flex-col justify-between">
+                <div>
+                  <div className="w-12 h-12 rounded-2xl bg-[#F6F3EB] flex items-center justify-center text-[#3A1554] mb-6">
+                    <Users className="w-5 h-5" />
+                  </div>
+                  <h3 className="text-xl font-serif font-bold text-[#3A1554] mb-3">
+                    Community &amp; Connection
+                  </h3>
+                  <p className="text-gray-600 text-sm leading-relaxed">
+                    To foster warm Scottish friendships, combat social isolation, and bring people together through the shared joy of song, conversation, and community spirit.
+                  </p>
+                </div>
+                <div className="pt-6 mt-6 border-t border-gray-100 flex items-center justify-between text-xs font-bold text-[#3A1554]">
+                  <span>Aim #2</span>
+                  <CheckCircle2 className="w-4 h-4 text-emerald-600" />
+                </div>
               </div>
-              <p className="text-xs text-gray-500 leading-relaxed">
-                Welcomes new members, sets up the hall, and makes sure everyone has a ukulele and a songbook!
-              </p>
+
+              {/* Aim 3 */}
+              <div className="bg-white p-7 rounded-2xl border border-gray-200/80 shadow-xs flex flex-col justify-between">
+                <div>
+                  <div className="w-12 h-12 rounded-2xl bg-[#F6F3EB] flex items-center justify-center text-[#3A1554] mb-6">
+                    <Heart className="w-5 h-5" />
+                  </div>
+                  <h3 className="text-xl font-serif font-bold text-[#3A1554] mb-3">
+                    Sharing Joy Through Performance
+                  </h3>
+                  <p className="text-gray-600 text-sm leading-relaxed">
+                    To entertain local audiences across Clackmannanshire and Central Scotland, performing at care homes, local festivals, and charity events.
+                  </p>
+                </div>
+                <div className="pt-6 mt-6 border-t border-gray-100 flex items-center justify-between text-xs font-bold text-[#3A1554]">
+                  <span>Aim #3</span>
+                  <CheckCircle2 className="w-4 h-4 text-emerald-600" />
+                </div>
+              </div>
+
             </div>
 
-            {/* Organiser Card 2 */}
-            <div className="bg-white p-6 rounded-2xl border border-gray-200 shadow-xs text-center space-y-3">
-              <div className="w-20 h-20 rounded-full bg-emerald-100 text-[#596C34] flex items-center justify-center mx-auto border-2 border-emerald-300 font-bold text-xl">
-                SL
+            {/* Bottom Row: 2 Cards Centered */}
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-4xl mx-auto text-left">
+              
+              {/* Aim 4 */}
+              <div className="bg-white p-7 rounded-2xl border border-gray-200/80 shadow-xs flex flex-col justify-between">
+                <div>
+                  <div className="w-12 h-12 rounded-2xl bg-[#F6F3EB] flex items-center justify-center text-[#3A1554] mb-6">
+                    <Sparkles className="w-5 h-5" />
+                  </div>
+                  <h3 className="text-xl font-serif font-bold text-[#3A1554] mb-3">
+                    Accessible Learning
+                  </h3>
+                  <p className="text-gray-600 text-sm leading-relaxed">
+                    To offer gentle, easy-to-follow guidance and shared songbooks so anyone can learn at their own pace with loan ukuleles available.
+                  </p>
+                </div>
+                <div className="pt-6 mt-6 border-t border-gray-100 flex items-center justify-between text-xs font-bold text-[#3A1554]">
+                  <span>Aim #4</span>
+                  <CheckCircle2 className="w-4 h-4 text-emerald-600" />
+                </div>
               </div>
-              <div>
-                <h3 className="font-bold text-base text-gray-900">Song Leader</h3>
-                <p className="text-xs text-[#596C34] font-semibold">Musical Guide</p>
-              </div>
-              <p className="text-xs text-gray-500 leading-relaxed">
-                Guides us through chords, tempos, and vocal harmonies with patience, humor, and enthusiasm.
-              </p>
-            </div>
 
-            {/* Organiser Card 3 */}
-            <div className="bg-white p-6 rounded-2xl border border-gray-200 shadow-xs text-center space-y-3 sm:col-span-2 lg:col-span-1">
-              <div className="w-20 h-20 rounded-full bg-amber-100 text-amber-800 flex items-center justify-center mx-auto border-2 border-amber-300 font-bold text-xl">
-                TC
+              {/* Aim 5 */}
+              <div className="bg-white p-7 rounded-2xl border border-gray-200/80 shadow-xs flex flex-col justify-between">
+                <div>
+                  <div className="w-12 h-12 rounded-2xl bg-[#F6F3EB] flex items-center justify-center text-[#3A1554] mb-6">
+                    <Music className="w-5 h-5" />
+                  </div>
+                  <h3 className="text-xl font-serif font-bold text-[#3A1554] mb-3">
+                    Fun &amp; Wellbeing
+                  </h3>
+                  <p className="text-gray-600 text-sm leading-relaxed">
+                    To promote mental health and personal wellbeing through laughter, singing out loud, and the therapeutic, uplifting nature of the ukulele.
+                  </p>
+                </div>
+                <div className="pt-6 mt-6 border-t border-gray-100 flex items-center justify-between text-xs font-bold text-[#3A1554]">
+                  <span>Aim #5</span>
+                  <CheckCircle2 className="w-4 h-4 text-emerald-600" />
+                </div>
               </div>
-              <div>
-                <h3 className="font-bold text-base text-gray-900">Tea &amp; Hospitality</h3>
-                <p className="text-xs text-[#596C34] font-semibold">Half-Time Refreshments</p>
-              </div>
-              <p className="text-xs text-gray-500 leading-relaxed">
-                Ensures the kettle is boiled and the biscuits are stacked ready for our half-time break!
-              </p>
+
             </div>
 
           </div>
@@ -282,83 +336,421 @@ export const AboutUsPage: React.FC<AboutUsPageProps> = ({ onOpenContact, onNavig
         </div>
       </section>
 
-      {/* 6. Frequently Asked Questions */}
-      <section className="py-12 sm:py-16 max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center mb-10">
-          <div className="inline-flex items-center gap-1.5 text-xs font-bold text-[#3A1554] uppercase tracking-wider bg-purple-100 px-3 py-1 rounded-full mb-2">
-            <HelpCircle className="w-3.5 h-3.5" />
-            <span>Got Questions?</span>
-          </div>
-          <h2 className="text-2xl sm:text-3xl font-black font-serif text-[#3A1554]">
-            Frequently Asked Questions
-          </h2>
+      {/* 4. SECTION: WHAT MAKES US DIFFERENT */}
+      <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 text-center">
+        
+        <div className="mb-3">
+          <span className="inline-block bg-[#F2EDE4] text-[#3A1554] text-xs font-bold uppercase tracking-wider px-4 py-1.5 rounded-full">
+            WHY YOU'LL LOVE STRUMMING WITH US
+          </span>
         </div>
 
-        <div className="space-y-4 text-left">
+        <h2 className="text-3xl sm:text-5xl font-serif font-bold text-[#3A1554] mb-3">
+          What Makes Us Different
+        </h2>
+
+        <p className="text-gray-600 text-base sm:text-lg mb-12">
+          Here is what sets our friendly Scottish community group apart.
+        </p>
+
+        {/* 6 Cards 3x2 Grid */}
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 text-left">
           
-          <div className="bg-white p-5 rounded-xl border border-gray-200 shadow-xs">
-            <h3 className="font-bold text-base text-gray-900 flex items-center gap-2">
-              <span className="w-2 h-2 rounded-full bg-[#596C34]"></span>
-              Do I need to own a ukulele to come along?
+          {/* Card 1 */}
+          <div className="bg-[#FAF8F5] p-7 rounded-2xl border border-gray-200/80 shadow-xs">
+            <div className="w-12 h-12 rounded-2xl bg-white border border-gray-200/80 flex items-center justify-center text-[#3A1554] mb-6">
+              <Smile className="w-5 h-5" />
+            </div>
+            <h3 className="text-xl font-serif font-bold text-[#3A1554] mb-3">
+              No Auditions Ever
             </h3>
-            <p className="text-xs sm:text-sm text-gray-600 mt-2 pl-4 leading-relaxed">
-              Not at all! We have 8 spare loaner ukuleles available free of charge for newcomers. Just let us know in advance so we can reserve one for you.
+            <p className="text-gray-600 text-sm leading-relaxed">
+              Whether you've played for decades or just bought your first ukulele yesterday, you are warmly invited. We have seats for all skill levels.
             </p>
           </div>
 
-          <div className="bg-white p-5 rounded-xl border border-gray-200 shadow-xs">
-            <h3 className="font-bold text-base text-gray-900 flex items-center gap-2">
-              <span className="w-2 h-2 rounded-full bg-[#596C34]"></span>
-              What if I can't read sheet music or play any instrument?
+          {/* Card 2 */}
+          <div className="bg-[#FAF8F5] p-7 rounded-2xl border border-gray-200/80 shadow-xs">
+            <div className="w-12 h-12 rounded-2xl bg-white border border-gray-200/80 flex items-center justify-center text-[#3A1554] mb-6">
+              <ShieldCheck className="w-5 h-5" />
+            </div>
+            <h3 className="text-xl font-serif font-bold text-[#3A1554] mb-3">
+              Loan Ukuleles Available
             </h3>
-            <p className="text-xs sm:text-sm text-gray-600 mt-2 pl-4 leading-relaxed">
-              No problem! Ukulele chord charts are simple diagrams showing where to place your fingers. Most songs use just 3 or 4 basic chords, and we learn at a comfortable, easy pace together.
+            <p className="text-gray-600 text-sm leading-relaxed">
+              Don't own an instrument yet? No problem at all! Let us know beforehand and we'll have a tuned ukulele ready for you to try out.
             </p>
           </div>
 
-          <div className="bg-white p-5 rounded-xl border border-gray-200 shadow-xs">
-            <h3 className="font-bold text-base text-gray-900 flex items-center gap-2">
-              <span className="w-2 h-2 rounded-full bg-[#596C34]"></span>
-              When and where do you meet?
+          {/* Card 3 */}
+          <div className="bg-[#FAF8F5] p-7 rounded-2xl border border-gray-200/80 shadow-xs">
+            <div className="w-12 h-12 rounded-2xl bg-white border border-gray-200/80 flex items-center justify-center text-[#3A1554] mb-6">
+              <UserPlus className="w-5 h-5" />
+            </div>
+            <h3 className="text-xl font-serif font-bold text-[#3A1554] mb-3">
+              Warm Scottish Hospitality
             </h3>
-            <p className="text-xs sm:text-sm text-gray-600 mt-2 pl-4 leading-relaxed">
-              We meet at <strong>The Johnstone Arms Hotel, 55 Stirling St, Alva FK12 5ED</strong>. Check our Events calendar or reach out to confirm our upcoming session times!
+            <p className="text-gray-600 text-sm leading-relaxed">
+              Our rehearsals always feature a half-time break with tea, biscuits, and friendly chat. It's as much a social club as a musical group.
             </p>
           </div>
 
-          <div className="bg-white p-5 rounded-xl border border-gray-200 shadow-xs">
-            <h3 className="font-bold text-base text-gray-900 flex items-center gap-2">
-              <span className="w-2 h-2 rounded-full bg-[#596C34]"></span>
-              Is there a fee to attend sessions?
+          {/* Card 4 */}
+          <div className="bg-[#FAF8F5] p-7 rounded-2xl border border-gray-200/80 shadow-xs">
+            <div className="w-12 h-12 rounded-2xl bg-white border border-gray-200/80 flex items-center justify-center text-[#3A1554] mb-6">
+              <Calendar className="w-5 h-5" />
+            </div>
+            <h3 className="text-xl font-serif font-bold text-[#3A1554] mb-3">
+              Easy Tabbed Songbooks
             </h3>
-            <p className="text-xs sm:text-sm text-gray-600 mt-2 pl-4 leading-relaxed">
-              Your first session is completely free! After that, we charge a modest small weekly contribution to cover hall hire and tea/biscuit supplies.
+            <p className="text-gray-600 text-sm leading-relaxed">
+              We provide clean, clear chord sheets with simple diagrams so you can follow along easily even if you can't read standard sheet music.
+            </p>
+          </div>
+
+          {/* Card 5 */}
+          <div className="bg-[#FAF8F5] p-7 rounded-2xl border border-gray-200/80 shadow-xs">
+            <div className="w-12 h-12 rounded-2xl bg-white border border-gray-200/80 flex items-center justify-center text-[#3A1554] mb-6">
+              <Mic className="w-5 h-5" />
+            </div>
+            <h3 className="text-xl font-serif font-bold text-[#3A1554] mb-3">
+              Community Gigs &amp; Outreach
+            </h3>
+            <p className="text-gray-600 text-sm leading-relaxed">
+              We regularly perform for local care homes, community fetes, and local charity fundraisers, spreading cheer wherever we play.
+            </p>
+          </div>
+
+          {/* Card 6 */}
+          <div className="bg-[#FAF8F5] p-7 rounded-2xl border border-gray-200/80 shadow-xs">
+            <div className="w-12 h-12 rounded-2xl bg-white border border-gray-200/80 flex items-center justify-center text-[#3A1554] mb-6">
+              <Sparkles className="w-5 h-5" />
+            </div>
+            <h3 className="text-xl font-serif font-bold text-[#3A1554] mb-3">
+              Friendly Mentorship
+            </h3>
+            <p className="text-gray-600 text-sm leading-relaxed">
+              Our experienced members sit alongside newcomers to offer gentle hints, fingerings, and strumming tips in a zero-pressure setting.
             </p>
           </div>
 
         </div>
       </section>
 
-      {/* 7. Bottom Call to Action */}
-      <section className="bg-[#3A1554] text-white py-12 text-center relative overflow-hidden">
-        <div className="max-w-3xl mx-auto px-4 space-y-4 relative z-10">
-          <h2 className="text-2xl sm:text-4xl font-extrabold font-serif">
-            Ready to Join the Strum?
-          </h2>
-          <p className="text-purple-100 text-sm sm:text-base max-w-xl mx-auto">
-            Come along to our next session and experience the joy of making music together in a friendly community.
-          </p>
-          <div className="pt-2">
-            <button
-              onClick={onOpenContact}
-              className="bg-[#596C34] hover:bg-[#4C5E2C] text-white font-bold px-8 py-3.5 rounded-full text-xs sm:text-sm uppercase tracking-wider shadow-lg transition-all active:scale-95"
-            >
-              Contact Us To Get Started
-            </button>
+      {/* 5. SECTION: MEET OUR COMMITTEE */}
+      <section className="bg-[#F6F3EB] py-16 border-t border-b border-gray-200/60">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+          
+          <div className="mb-3">
+            <span className="inline-block bg-[#EAE4D7] text-[#3A1554] text-xs font-bold uppercase tracking-wider px-4 py-1.5 rounded-full">
+              FRIENDLY FACES
+            </span>
           </div>
+
+          <h2 className="text-3xl sm:text-5xl font-serif font-bold text-[#3A1554] mb-6">
+            Meet our Committee
+          </h2>
+
+          <div className="max-w-3xl mx-auto space-y-4 text-gray-700 text-sm sm:text-base leading-relaxed mb-12">
+            <p>
+              Behind every rehearsal, performance and event is a team of dedicated volunteers who generously give their time to help Ochil Strummers thrive.
+            </p>
+            <p>
+              From organising rehearsals and performances to managing finances, maintaining our website and supporting new members, our committee works together to ensure everyone enjoys being part of the band.
+            </p>
+            <p>
+              Above all, we're simply fellow band members who share a passion for music, friendship and making Ochil Strummers a welcoming place for everyone.
+            </p>
+          </div>
+
+          {/* Committee Grid */}
+          <div className="space-y-6 text-left">
+            
+            {/* Top Row: 3 Members */}
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+              
+              {/* Member 1: Linda Nisbet */}
+              <div className="bg-white rounded-2xl border border-gray-200/80 overflow-hidden shadow-xs flex flex-col justify-between">
+                <div>
+                  {/* Photo Placeholder */}
+                  <div className="bg-[#EFECE6] h-48 relative flex flex-col items-center justify-center text-gray-500">
+                    <span className="absolute top-3 right-3 bg-[#3A1554] text-white text-[11px] font-medium px-3 py-1 rounded-full shadow-2xs">
+                      Tenor Ukulele
+                    </span>
+                    <UserPlus className="w-8 h-8 text-[#3A1554]/60 mb-1" />
+                    <span className="font-serif text-sm font-bold text-[#3A1554]/80">Photo to be added</span>
+                  </div>
+                  
+                  {/* Content */}
+                  <div className="p-6 space-y-2">
+                    <h3 className="text-xl font-serif font-bold text-[#3A1554]">
+                      Linda Nisbet
+                    </h3>
+                    <p className="text-xs font-bold text-[#3A1554] uppercase tracking-wider">
+                      CHAIRPERSON &amp; DIGITAL COMMUNICATIONS
+                    </p>
+                    <p className="text-gray-600 text-xs sm:text-sm leading-relaxed pt-2">
+                      Helping shape the future of Ochil Strummers while looking after our website, social media and communications, ensuring our band stays connected both on and off the stage.
+                    </p>
+                  </div>
+                </div>
+
+                <div className="px-6 py-4 border-t border-gray-100 text-xs text-gray-500">
+                  Member since: 2025
+                </div>
+              </div>
+
+              {/* Member 2: Pauline Sutton */}
+              <div className="bg-white rounded-2xl border border-gray-200/80 overflow-hidden shadow-xs flex flex-col justify-between">
+                <div>
+                  {/* Photo Placeholder */}
+                  <div className="bg-[#EFECE6] h-48 relative flex flex-col items-center justify-center text-gray-500">
+                    <span className="absolute top-3 right-3 bg-[#3A1554] text-white text-[11px] font-medium px-3 py-1 rounded-full shadow-2xs">
+                      Concert Ukulele &amp; Cajon
+                    </span>
+                    <UserPlus className="w-8 h-8 text-[#3A1554]/60 mb-1" />
+                    <span className="font-serif text-sm font-bold text-[#3A1554]/80">Photo to be added</span>
+                  </div>
+                  
+                  {/* Content */}
+                  <div className="p-6 space-y-2">
+                    <h3 className="text-xl font-serif font-bold text-[#3A1554]">
+                      Pauline Sutton
+                    </h3>
+                    <p className="text-xs font-bold text-[#3A1554] uppercase tracking-wider">
+                      VICE CHAIRPERSON &amp; BAND LEADER
+                    </p>
+                    <p className="text-gray-600 text-xs sm:text-sm leading-relaxed pt-2">
+                      TBA
+                    </p>
+                  </div>
+                </div>
+
+                <div className="px-6 py-4 border-t border-gray-100 text-xs text-gray-500">
+                  Member since: 2025
+                </div>
+              </div>
+
+              {/* Member 3: Chris Matheson */}
+              <div className="bg-white rounded-2xl border border-gray-200/80 overflow-hidden shadow-xs flex flex-col justify-between">
+                <div>
+                  {/* Photo Placeholder */}
+                  <div className="bg-[#EFECE6] h-48 relative flex flex-col items-center justify-center text-gray-500">
+                    <span className="absolute top-3 right-3 bg-[#3A1554] text-white text-[11px] font-medium px-3 py-1 rounded-full shadow-2xs">
+                      Tenor Ukulele
+                    </span>
+                    <UserPlus className="w-8 h-8 text-[#3A1554]/60 mb-1" />
+                    <span className="font-serif text-sm font-bold text-[#3A1554]/80">Photo to be added</span>
+                  </div>
+                  
+                  {/* Content */}
+                  <div className="p-6 space-y-2">
+                    <h3 className="text-xl font-serif font-bold text-[#3A1554]">
+                      Chris Matheson
+                    </h3>
+                    <p className="text-xs font-bold text-[#3A1554] uppercase tracking-wider">
+                      GIG ORGANISER
+                    </p>
+                    <p className="text-gray-600 text-xs sm:text-sm leading-relaxed pt-2">
+                      TBA
+                    </p>
+                  </div>
+                </div>
+
+                <div className="px-6 py-4 border-t border-gray-100 text-xs text-gray-500">
+                  Member since: 2025
+                </div>
+              </div>
+
+            </div>
+
+            {/* Bottom Row: 2 Members Centered */}
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-4xl mx-auto">
+              
+              {/* Member 4: Emma Robinson */}
+              <div className="bg-white rounded-2xl border border-gray-200/80 overflow-hidden shadow-xs flex flex-col justify-between">
+                <div>
+                  {/* Photo Placeholder */}
+                  <div className="bg-[#EFECE6] h-48 relative flex flex-col items-center justify-center text-gray-500">
+                    <span className="absolute top-3 right-3 bg-[#3A1554] text-white text-[11px] font-medium px-3 py-1 rounded-full shadow-2xs">
+                      Excel Spreadsheet
+                    </span>
+                    <UserPlus className="w-8 h-8 text-[#3A1554]/60 mb-1" />
+                    <span className="font-serif text-sm font-bold text-[#3A1554]/80">Photo to be added</span>
+                  </div>
+                  
+                  {/* Content */}
+                  <div className="p-6 space-y-2">
+                    <h3 className="text-xl font-serif font-bold text-[#3A1554]">
+                      Emma Robinson
+                    </h3>
+                    <p className="text-xs font-bold text-[#3A1554] uppercase tracking-wider">
+                      TREASURER
+                    </p>
+                    <p className="text-gray-600 text-xs sm:text-sm leading-relaxed pt-2">
+                      TBA
+                    </p>
+                  </div>
+                </div>
+
+                <div className="px-6 py-4 border-t border-gray-100 text-xs text-gray-500">
+                  Member since: 2025
+                </div>
+              </div>
+
+              {/* Member 5: Janet Cheetham */}
+              <div className="bg-white rounded-2xl border border-gray-200/80 overflow-hidden shadow-xs flex flex-col justify-between">
+                <div>
+                  {/* Photo Placeholder */}
+                  <div className="bg-[#EFECE6] h-48 relative flex flex-col items-center justify-center text-gray-500">
+                    <span className="absolute top-3 right-3 bg-[#3A1554] text-white text-[11px] font-medium px-3 py-1 rounded-full shadow-2xs">
+                      Concert Ukulele
+                    </span>
+                    <UserPlus className="w-8 h-8 text-[#3A1554]/60 mb-1" />
+                    <span className="font-serif text-sm font-bold text-[#3A1554]/80">Photo to be added</span>
+                  </div>
+                  
+                  {/* Content */}
+                  <div className="p-6 space-y-2">
+                    <h3 className="text-xl font-serif font-bold text-[#3A1554]">
+                      Janet Cheetham
+                    </h3>
+                    <p className="text-xs font-bold text-[#3A1554] uppercase tracking-wider">
+                      SECRETARY
+                    </p>
+                    <p className="text-gray-600 text-xs sm:text-sm leading-relaxed pt-2">
+                      TBA
+                    </p>
+                  </div>
+                </div>
+
+                <div className="px-6 py-4 border-t border-gray-100 text-xs text-gray-500">
+                  Member since: 2026
+                </div>
+              </div>
+
+            </div>
+
+          </div>
+
+        </div>
+      </section>
+
+      {/* 6. SECTION: WHERE WE MEET */}
+      <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 text-center">
+        
+        <div className="mb-3">
+          <span className="inline-block bg-[#F2EDE4] text-[#3A1554] text-xs font-bold uppercase tracking-wider px-4 py-1.5 rounded-full">
+            WEEKLY REHEARSALS
+          </span>
+        </div>
+
+        <h2 className="text-3xl sm:text-5xl font-serif font-bold text-[#3A1554] mb-10">
+          Where We Meet
+        </h2>
+
+        {/* Large Venue Container Card */}
+        <div className="bg-[#F5F2EA] rounded-3xl p-6 sm:p-10 border border-gray-200/60 shadow-xs text-left max-w-5xl mx-auto">
+          
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
+            
+            {/* Left Details Column */}
+            <div className="lg:col-span-7 space-y-6">
+              
+              {/* Header Title with Pin Icon */}
+              <div className="flex items-start gap-3.5">
+                <div className="w-10 h-10 rounded-full bg-[#3A1554] text-white flex items-center justify-center shrink-0 mt-1">
+                  <MapPin className="w-5 h-5" />
+                </div>
+                <div>
+                  <h3 className="text-2xl sm:text-3xl font-serif font-bold text-[#3A1554]">
+                    Johnstone Arms
+                  </h3>
+                  <p className="text-gray-600 text-sm font-semibold">
+                    Alva, Clackmannanshire
+                  </p>
+                </div>
+              </div>
+
+              {/* Info Grid: Rehearsal Day & Start Time */}
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                <div className="bg-white p-4 rounded-2xl border border-gray-200/80 flex items-center gap-3">
+                  <Calendar className="w-5 h-5 text-[#3A1554]" />
+                  <div>
+                    <span className="block text-[11px] font-bold text-gray-400 uppercase tracking-wider">
+                      REHEARSAL DAY
+                    </span>
+                    <span className="text-sm font-bold text-gray-900">
+                      Monday
+                    </span>
+                  </div>
+                </div>
+
+                <div className="bg-white p-4 rounded-2xl border border-gray-200/80 flex items-center gap-3">
+                  <Clock className="w-5 h-5 text-[#3A1554]" />
+                  <div>
+                    <span className="block text-[11px] font-bold text-gray-400 uppercase tracking-wider">
+                      START TIME
+                    </span>
+                    <span className="text-sm font-bold text-gray-900">
+                      7:30 PM – 9:30 PM
+                    </span>
+                  </div>
+                </div>
+              </div>
+
+              {/* Amber Welcome Banner */}
+              <div className="bg-[#FDF3D6] border border-amber-200 p-4 rounded-2xl flex items-center gap-3 text-amber-900 text-xs sm:text-sm font-medium">
+                <div className="w-7 h-7 rounded-full bg-amber-200/80 text-amber-900 flex items-center justify-center shrink-0">
+                  <Smile className="w-4 h-4" />
+                </div>
+                <span>
+                  All skill levels welcome! Bring a ukulele if you have one, or borrow one of ours!
+                </span>
+              </div>
+
+              {/* CTA Button */}
+              <div className="pt-2">
+                <button
+                  onClick={handleTasterClick}
+                  className="bg-[#3A1554] hover:bg-[#2A0F3D] text-white px-7 py-3.5 rounded-full font-bold text-xs sm:text-sm uppercase tracking-wider transition-colors inline-flex items-center gap-2.5 shadow-md active:scale-95 cursor-pointer"
+                >
+                  <span>FREE TASTER SESSION</span>
+                  <ArrowRight className="w-4 h-4" />
+                </button>
+              </div>
+
+            </div>
+
+            {/* Right Photo Column */}
+            <div className="lg:col-span-5">
+              <div className="relative rounded-2xl overflow-hidden shadow-lg border-2 border-white/60 bg-[#3A1554]">
+                <img
+                  src={pubSessionPhoto}
+                  alt="Johnstone Arms, Alva"
+                  className="w-full h-64 sm:h-72 object-cover"
+                  referrerPolicy="no-referrer"
+                />
+                
+                {/* Photo Overlay */}
+                <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent p-5 pt-12 text-white">
+                  <h4 className="font-bold text-base text-white">
+                    Johnstone Arms, Alva
+                  </h4>
+                  <p className="text-amber-200 text-xs font-medium">
+                    Warm &amp; cozy rehearsal space
+                  </p>
+                </div>
+              </div>
+            </div>
+
+          </div>
+
         </div>
       </section>
 
     </div>
   );
 };
+
+export default AboutUsPage;

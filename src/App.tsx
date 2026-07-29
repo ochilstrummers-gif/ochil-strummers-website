@@ -6,7 +6,7 @@ import { FeaturesRow } from './components/FeaturesRow';
 import { Testimonials } from './components/Testimonials';
 import { EventsAndPhotosSection } from './components/EventsAndPhotosSection';
 import { JoinBanner } from './components/JoinBanner';
-import { AboutUsPage } from './components/AboutUsPage';
+import { AboutPage } from './pages/AboutPage';
 import { EventsPage } from './components/EventsPage';
 import { JoinUsPage } from './components/JoinUsPage';
 import { SectionModals } from './components/SectionModals';
@@ -46,7 +46,7 @@ export function App() {
       {/* Main Page Body */}
       <main className="flex-1">
         {activeNav === 'ABOUT US' ? (
-          <AboutUsPage
+          <AboutPage
             onOpenContact={() => setActiveModal('CONTACT')}
             onNavigateHome={() => handleNavClick('HOME')}
           />

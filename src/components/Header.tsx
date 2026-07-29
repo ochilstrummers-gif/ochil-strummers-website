@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Facebook, Mail, Menu, X, Youtube } from 'lucide-react';
+import { Facebook, Instagram, Mail, Menu, X, Youtube } from 'lucide-react';
 
 interface HeaderProps {
   activeNav: string;
@@ -24,7 +24,7 @@ export const Header: React.FC<HeaderProps> = ({ activeNav, setActiveNav, onOpenC
     { id: 'HOME', label: 'HOME' },
     { id: 'ABOUT US', label: 'ABOUT US' },
     { id: 'EVENTS', label: 'EVENTS & BOOK US' },
-    { id: 'SONGBOOK', label: 'SONGBOOK (MEMBERS)' },
+    { id: 'SONGBOOK', label: 'MEMBERS' },
     { id: 'JOIN US', label: 'JOIN US' },
   ];
 
@@ -48,15 +48,15 @@ export const Header: React.FC<HeaderProps> = ({ activeNav, setActiveNav, onOpenC
             </span>
           </div>
 
-          {/* Center Desktop Navigation */}
-          <nav className="hidden lg:flex items-center space-x-6 xl:space-x-8">
+          {/* Center Desktop & Tablet Navigation */}
+          <nav className="hidden md:flex items-center space-x-3 lg:space-x-6 xl:space-x-8">
             {navItems.map((item) => {
               const isActive = activeNav === item.id;
               return (
                 <button
                   key={item.id}
                   onClick={() => handleSelectNav(item.id)}
-                  className={`text-xs xl:text-sm font-bold tracking-wide transition-colors relative py-1 cursor-pointer ${
+                  className={`text-xs lg:text-sm font-bold tracking-wide transition-colors relative py-1 cursor-pointer whitespace-nowrap ${
                     isActive ? 'text-[#3A1554]' : 'text-gray-700 hover:text-[#3A1554]'
                   }`}
                 >
@@ -70,7 +70,7 @@ export const Header: React.FC<HeaderProps> = ({ activeNav, setActiveNav, onOpenC
           </nav>
 
           {/* Right Social & Contact Circle Icons + Mobile Toggle */}
-          <div className="flex items-center gap-2 sm:gap-2.5">
+          <div className="flex items-center gap-1.5 sm:gap-2.5">
             <a
               href="https://facebook.com"
               target="_blank"
@@ -79,6 +79,16 @@ export const Header: React.FC<HeaderProps> = ({ activeNav, setActiveNav, onOpenC
               aria-label="Facebook Page"
             >
               <Facebook className="w-4 h-4 sm:w-5 sm:h-5 fill-current stroke-none" />
+            </a>
+
+            <a
+              href="https://instagram.com"
+              target="_blank"
+              rel="noreferrer"
+              className="w-8 h-8 sm:w-10 sm:h-10 rounded-full bg-[#3A1554] text-white flex items-center justify-center hover:bg-[#5C1D7A] transition-colors shadow-xs"
+              aria-label="Instagram Page"
+            >
+              <Instagram className="w-4 h-4 sm:w-5 sm:h-5" />
             </a>
 
             <a
@@ -112,7 +122,7 @@ export const Header: React.FC<HeaderProps> = ({ activeNav, setActiveNav, onOpenC
             {/* Mobile Menu Button */}
             <button
               onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-              className="lg:hidden w-8 h-8 sm:w-10 sm:h-10 rounded-xl bg-gray-100 text-[#3A1554] flex items-center justify-center hover:bg-gray-200 transition-colors cursor-pointer"
+              className="md:hidden w-8 h-8 sm:w-10 sm:h-10 rounded-xl bg-gray-100 text-[#3A1554] flex items-center justify-center hover:bg-gray-200 transition-colors cursor-pointer"
               aria-label="Toggle menu"
             >
               {mobileMenuOpen ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}
@@ -124,7 +134,7 @@ export const Header: React.FC<HeaderProps> = ({ activeNav, setActiveNav, onOpenC
 
       {/* Mobile Dropdown Menu */}
       {mobileMenuOpen && (
-        <div className="lg:hidden bg-white border-t border-gray-100 px-4 pt-3 pb-6 space-y-2 shadow-lg">
+        <div className="md:hidden bg-white border-t border-gray-100 px-4 pt-3 pb-6 space-y-2 shadow-lg">
           {navItems.map((item) => {
             const isActive = activeNav === item.id;
             return (
