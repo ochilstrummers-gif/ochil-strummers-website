@@ -139,13 +139,6 @@ export const EventsAndPhotosSection: React.FC<EventsAndPhotosSectionProps> = ({
               <h2 className="text-lg sm:text-xl font-black text-[#3A1554] tracking-tight uppercase">
                 LATEST PHOTOS
               </h2>
-              <button
-                onClick={onOpenGalleryModal}
-                className="text-xs sm:text-sm font-bold text-[#596C34] hover:text-[#4C5E2C] flex items-center gap-1 transition-colors"
-              >
-                <span>VIEW GALLERY</span>
-                <ArrowRight className="w-3.5 h-3.5" />
-              </button>
             </div>
 
             {/* 4 Photo Thumbnails Grid */}

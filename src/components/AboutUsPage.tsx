@@ -152,7 +152,7 @@ export const AboutUsPage: React.FC<AboutUsPageProps> = ({
                 2025 – A New Beginning
               </h3>
               <p className="text-gray-600 text-sm leading-relaxed">
-                Ochil Strummers was established as a committee-led community ukulele group, creating a welcoming, inclusive environment where people of all abilities could enjoy making music together.
+                The group was established as a committee-led community ukulele group, creating a welcoming, inclusive environment where people of all abilities could enjoy making music together.
               </p>
             </div>
           </div>
@@ -182,7 +182,7 @@ export const AboutUsPage: React.FC<AboutUsPageProps> = ({
                 2025–2026 – Performing for the Community
               </h3>
               <p className="text-gray-600 text-sm leading-relaxed">
-                The band began entertaining audiences at local events, charity fundraisers, care homes, festivals and community venues across Central Scotland, helping to spread smiles through music while supporting worthwhile causes.
+                The group began entertaining audiences at local events, charity fundraisers, care homes, festivals and community venues across Central Scotland, helping to spread smiles through music while supporting worthwhile causes.
               </p>
             </div>
           </div>
@@ -197,7 +197,7 @@ export const AboutUsPage: React.FC<AboutUsPageProps> = ({
                 Today
               </h3>
               <p className="text-gray-600 text-sm leading-relaxed">
-                Ochil Strummers continues to grow, welcoming new members of all ages and abilities. Our vision remains simple: to provide a friendly place where everyone can learn, laugh, perform and enjoy making music together.
+                With our new brand, Ochil Strummers, we will continue to grow, welcoming new members of all ages and abilities. Our vision remains simple: to provide a friendly place where everyone can learn, laugh, perform and enjoy making music together.
               </p>
             </div>
           </div>
@@ -430,7 +430,7 @@ export const AboutUsPage: React.FC<AboutUsPageProps> = ({
               Friendly Mentorship
             </h3>
             <p className="text-gray-600 text-sm leading-relaxed">
-              Our experienced members sit alongside newcomers to offer gentle hints, fingerings, and strumming tips in a zero-pressure setting.
+              Our experienced members sit alongside newcomers to offer gentle hints and strumming tips in a zero-pressure setting.
             </p>
           </div>
 
@@ -537,7 +537,7 @@ export const AboutUsPage: React.FC<AboutUsPageProps> = ({
                   {/* Photo Placeholder */}
                   <div className="bg-[#EFECE6] h-48 relative flex flex-col items-center justify-center text-gray-500">
                     <span className="absolute top-3 right-3 bg-[#3A1554] text-white text-[11px] font-medium px-3 py-1 rounded-full shadow-2xs">
-                      Tenor Ukulele
+                      Baritone Ukulele
                     </span>
                     <UserPlus className="w-8 h-8 text-[#3A1554]/60 mb-1" />
                     <span className="font-serif text-sm font-bold text-[#3A1554]/80">Photo to be added</span>
@@ -629,119 +629,6 @@ export const AboutUsPage: React.FC<AboutUsPageProps> = ({
                 </div>
               </div>
 
-            </div>
-
-          </div>
-
-        </div>
-      </section>
-
-      {/* 6. SECTION: WHERE WE MEET */}
-      <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 text-center">
-        
-        <div className="mb-3">
-          <span className="inline-block bg-[#F2EDE4] text-[#3A1554] text-xs font-bold uppercase tracking-wider px-4 py-1.5 rounded-full">
-            WEEKLY REHEARSALS
-          </span>
-        </div>
-
-        <h2 className="text-3xl sm:text-5xl font-serif font-bold text-[#3A1554] mb-10">
-          Where We Meet
-        </h2>
-
-        {/* Large Venue Container Card */}
-        <div className="bg-[#F5F2EA] rounded-3xl p-6 sm:p-10 border border-gray-200/60 shadow-xs text-left max-w-5xl mx-auto">
-          
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
-            
-            {/* Left Details Column */}
-            <div className="lg:col-span-7 space-y-6">
-              
-              {/* Header Title with Pin Icon */}
-              <div className="flex items-start gap-3.5">
-                <div className="w-10 h-10 rounded-full bg-[#3A1554] text-white flex items-center justify-center shrink-0 mt-1">
-                  <MapPin className="w-5 h-5" />
-                </div>
-                <div>
-                  <h3 className="text-2xl sm:text-3xl font-serif font-bold text-[#3A1554]">
-                    Johnstone Arms
-                  </h3>
-                  <p className="text-gray-600 text-sm font-semibold">
-                    Alva, Clackmannanshire
-                  </p>
-                </div>
-              </div>
-
-              {/* Info Grid: Rehearsal Day & Start Time */}
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                <div className="bg-white p-4 rounded-2xl border border-gray-200/80 flex items-center gap-3">
-                  <Calendar className="w-5 h-5 text-[#3A1554]" />
-                  <div>
-                    <span className="block text-[11px] font-bold text-gray-400 uppercase tracking-wider">
-                      REHEARSAL DAY
-                    </span>
-                    <span className="text-sm font-bold text-gray-900">
-                      Monday
-                    </span>
-                  </div>
-                </div>
-
-                <div className="bg-white p-4 rounded-2xl border border-gray-200/80 flex items-center gap-3">
-                  <Clock className="w-5 h-5 text-[#3A1554]" />
-                  <div>
-                    <span className="block text-[11px] font-bold text-gray-400 uppercase tracking-wider">
-                      START TIME
-                    </span>
-                    <span className="text-sm font-bold text-gray-900">
-                      7:30 PM – 9:30 PM
-                    </span>
-                  </div>
-                </div>
-              </div>
-
-              {/* Amber Welcome Banner */}
-              <div className="bg-[#FDF3D6] border border-amber-200 p-4 rounded-2xl flex items-center gap-3 text-amber-900 text-xs sm:text-sm font-medium">
-                <div className="w-7 h-7 rounded-full bg-amber-200/80 text-amber-900 flex items-center justify-center shrink-0">
-                  <Smile className="w-4 h-4" />
-                </div>
-                <span>
-                  All skill levels welcome! Bring a ukulele if you have one, or borrow one of ours!
-                </span>
-              </div>
-
-              {/* CTA Button */}
-              <div className="pt-2">
-                <button
-                  onClick={handleTasterClick}
-                  className="bg-[#3A1554] hover:bg-[#2A0F3D] text-white px-7 py-3.5 rounded-full font-bold text-xs sm:text-sm uppercase tracking-wider transition-colors inline-flex items-center gap-2.5 shadow-md active:scale-95 cursor-pointer"
-                >
-                  <span>FREE TASTER SESSION</span>
-                  <ArrowRight className="w-4 h-4" />
-                </button>
-              </div>
-
-            </div>
-
-            {/* Right Photo Column */}
-            <div className="lg:col-span-5">
-              <div className="relative rounded-2xl overflow-hidden shadow-lg border-2 border-white/60 bg-[#3A1554]">
-                <img
-                  src={pubSessionPhoto}
-                  alt="Johnstone Arms, Alva"
-                  className="w-full h-64 sm:h-72 object-cover"
-                  referrerPolicy="no-referrer"
-                />
-                
-                {/* Photo Overlay */}
-                <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent p-5 pt-12 text-white">
-                  <h4 className="font-bold text-base text-white">
-                    Johnstone Arms, Alva
-                  </h4>
-                  <p className="text-amber-200 text-xs font-medium">
-                    Warm &amp; cozy rehearsal space
-                  </p>
-                </div>
-              </div>
             </div>
 
           </div>

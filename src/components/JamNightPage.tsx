@@ -128,7 +128,7 @@ export const JamNightPage: React.FC<JamNightPageProps> = ({ onOpenContact, onNav
                 LIVE MUSIC &amp; COMMUNITY JAM
               </div>
               <h1 className="text-3xl sm:text-5xl font-black font-serif text-white tracking-tight">
-                Jam Night at The Johnstone Arms
+                Jam Night at <span className="whitespace-nowrap">The Johnstone Arms</span>
               </h1>
               <p className="text-purple-100 text-base sm:text-lg font-medium leading-relaxed max-w-2xl">
                 An open acoustic jam session where every musician, singer, and music enthusiast is welcome. Bring your instrument, bring your voice, or just come along to listen and sing!
@@ -158,7 +158,7 @@ export const JamNightPage: React.FC<JamNightPageProps> = ({ onOpenContact, onNav
             <div>
               <div className="inline-flex items-center gap-2 bg-[#3A1554]/10 text-[#3A1554] px-3.5 py-1 rounded-full text-xs font-bold uppercase tracking-wider mb-2">
                 <MapPin className="w-3.5 h-3.5" />
-                <span>The Johnstone Arms Hotel, Alva</span>
+                <span>The <span className="whitespace-nowrap">Johnstone Arms</span> Hotel, Alva</span>
               </div>
               <h2 className="text-2xl sm:text-4xl font-black font-serif text-[#3A1554]">
                 Any Instrument • Any Voice • Songbook Provided
@@ -166,7 +166,7 @@ export const JamNightPage: React.FC<JamNightPageProps> = ({ onOpenContact, onNav
             </div>
 
             <p className="text-gray-700 text-base sm:text-lg leading-relaxed font-medium">
-              Our Jam Nights at <strong>The Johnstone Arms Hotel in Alva</strong> run <strong>every 2nd Thursday from 7:30pm to 10:00pm</strong>. Check out our {onNavigateEvents ? (
+              Our Jam Nights at <strong>The <span className="whitespace-nowrap">Johnstone Arms</span> Hotel in Alva</strong> run <strong>every 2nd Thursday from 7:30pm to 10:00pm</strong>. Check out our {onNavigateEvents ? (
                 <button 
                   onClick={onNavigateEvents}
                   className="text-[#3A1554] underline font-bold hover:text-[#596C34] transition-colors cursor-pointer"
@@ -201,7 +201,7 @@ export const JamNightPage: React.FC<JamNightPageProps> = ({ onOpenContact, onNav
 
               <div className="flex items-center gap-3 bg-white p-3.5 rounded-xl border border-gray-200 shadow-xs">
                 <CheckCircle2 className="w-5 h-5 text-[#596C34] shrink-0" />
-                <span className="text-xs sm:text-sm font-bold text-gray-800">Cozy Johnstone Arms venue</span>
+                <span className="text-xs sm:text-sm font-bold text-gray-800">Cozy <span className="whitespace-nowrap">Johnstone Arms</span> venue</span>
               </div>
             </div>
 
@@ -244,7 +244,7 @@ export const JamNightPage: React.FC<JamNightPageProps> = ({ onOpenContact, onNav
                 <div className="inline-block bg-amber-400 text-black text-[10px] font-black uppercase tracking-wider px-2.5 py-0.5 rounded-md mb-1">
                   LOCATION &amp; TIME
                 </div>
-                <h3 className="text-xl font-bold font-serif">The Johnstone Arms Hotel, Alva</h3>
+                <h3 className="text-xl font-bold font-serif">The <span className="whitespace-nowrap">Johnstone Arms</span> Hotel, Alva</h3>
                 <p className="text-xs text-purple-200">
                   Every 2nd Thursday • 7:30pm to 10:00pm • Function Room
                 </p>

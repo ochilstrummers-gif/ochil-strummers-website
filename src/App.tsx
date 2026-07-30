@@ -6,10 +6,12 @@ import { FeaturesRow } from './components/FeaturesRow';
 import { Testimonials } from './components/Testimonials';
 import { EventsAndPhotosSection } from './components/EventsAndPhotosSection';
 import { JoinBanner } from './components/JoinBanner';
+import { WhereWeMeetSection } from './components/WhereWeMeetSection';
 import { AboutPage } from './pages/AboutPage';
 import { EventsPage } from './components/EventsPage';
 import { JoinUsPage } from './components/JoinUsPage';
 import { JamNightPage } from './components/JamNightPage';
+import { MembersPage } from './components/MembersPage';
 import { SectionModals } from './components/SectionModals';
 
 export function App() {
@@ -26,8 +28,8 @@ export function App() {
       setActiveModal(null); // Dedicated Jam Night page view
     } else if (navItem === 'EVENTS') {
       setActiveModal(null); // Dedicated page view instead of modal
-    } else if (navItem === 'SONGBOOK') {
-      setActiveModal('SONGBOOK');
+    } else if (navItem === 'MEMBERS' || navItem === 'SONGBOOK') {
+      setActiveModal(null); // Dedicated Members page view
     } else if (navItem === 'ABOUT US') {
       setActiveModal(null); // Dedicated page view instead of modal
     } else if (navItem === 'GALLERY') {
@@ -69,6 +71,12 @@ export function App() {
             onNavigateHome={() => handleNavClick('HOME')}
             onNavigateEvents={() => handleNavClick('EVENTS')}
           />
+        ) : activeNav === 'MEMBERS' || activeNav === 'SONGBOOK' ? (
+          <MembersPage
+            onOpenContact={() => setActiveModal('CONTACT')}
+            onNavigateHome={() => handleNavClick('HOME')}
+            onNavigateJoinUs={() => handleNavClick('JOIN US')}
+          />
         ) : (
           <>
             {/* 2. Hero Section with Panoramic Ochil Hills & Ukulele Group */}
@@ -89,8 +97,8 @@ export function App() {
               onOpenGalleryModal={() => setActiveModal('GALLERY')}
             />
 
-            {/* 7. Footer Callout ("Ready to Join?") */}
-            <JoinBanner onOpenContact={() => setActiveModal('CONTACT')} />
+            {/* 7. Where We Meet Rehearsals Section */}
+            <WhereWeMeetSection onOpenContact={() => setActiveModal('CONTACT')} />
           </>
         )}
       </main>

@@ -23,10 +23,10 @@ export const Header: React.FC<HeaderProps> = ({ activeNav, setActiveNav, onOpenC
   const navItems = [
     { id: 'HOME', label: 'HOME' },
     { id: 'ABOUT US', label: 'ABOUT US' },
+    { id: 'JOIN US', label: 'JOIN US' },
     { id: 'EVENTS', label: 'EVENTS & BOOK US' },
     { id: 'JAM NIGHT', label: 'JAM NIGHT' },
-    { id: 'JOIN US', label: 'JOIN US' },
-    { id: 'SONGBOOK', label: 'MEMBERS' },
+    { id: 'MEMBERS', label: 'MEMBERS' },
   ];
 
   const handleSelectNav = (id: string) => {

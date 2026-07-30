@@ -26,6 +26,7 @@ import ukuleleCajonImg from '../assets/images/stage_ukuleles_bass_cajon_17852556
 import logoBadge from '../assets/images/ochil_logo_badge_1785148841944.jpg';
 import groupOutdoorImg from '../assets/images/gallery_outdoor_monument_1785148882137.jpg';
 import indoorGroupImg from '../assets/images/gallery_indoor_group_1785148867749.jpg';
+import { Testimonials, EVENT_TESTIMONIAL_PLACEHOLDERS } from './Testimonials';
 
 interface EventsPageProps {
   onOpenContact: () => void;
@@ -770,6 +771,12 @@ export const EventsPage: React.FC<EventsPageProps> = ({ onOpenContact, onNavigat
 
         </div>
       </section>
+
+      {/* Event Host & Venue Testimonials Section */}
+      <Testimonials 
+        title="WHAT EVENT HOSTS & VENUES SAY" 
+        testimonials={EVENT_TESTIMONIAL_PLACEHOLDERS} 
+      />
 
       {/* Event Details Modal Popup */}
       {selectedEventModal && (
