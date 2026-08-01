@@ -77,8 +77,8 @@ export const ContactSection: React.FC<ContactSectionProps> = ({ onOpenJoinModal 
               </div>
 
               <button
-                onClick={onOpenJoinModal}
-                className="w-full bg-[#6D28D9] hover:bg-[#7C3AED] text-[#FAF5EE] font-extrabold py-3.5 px-4 rounded-xl shadow-lg transition-all text-sm flex items-center justify-center gap-2"
+                onClick={() => { window.open('https://heartfelt-biscotti-1bbd29.netlify.app/forms/join.html', '_blank'); }}
+                className="w-full bg-[#6D28D9] hover:bg-[#7C3AED] text-[#FAF5EE] font-extrabold py-3.5 px-4 rounded-xl shadow-lg transition-all text-sm flex items-center justify-center gap-2 cursor-pointer"
               >
                 <Sparkles className="w-4 h-4 text-amber-300" />
                 <span>Reserve Your Free Beginner Spot</span>

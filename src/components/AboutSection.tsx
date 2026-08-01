@@ -105,8 +105,8 @@ export const AboutSection: React.FC<AboutSectionProps> = ({ onOpenJoinModal }) =
 
             <div className="pt-3">
               <button
-                onClick={onOpenJoinModal}
-                className="bg-[#4C1D95] hover:bg-[#3B1F52] text-[#FAF5EE] px-6 py-3 rounded-xl font-bold text-sm shadow-md transition-all flex items-center gap-2"
+                onClick={() => { window.open('https://heartfelt-biscotti-1bbd29.netlify.app/forms/join.html', '_blank'); }}
+                className="bg-[#4C1D95] hover:bg-[#3B1F52] text-[#FAF5EE] px-6 py-3 rounded-xl font-bold text-sm shadow-md transition-all flex items-center gap-2 cursor-pointer"
               >
                 <Sparkles className="w-4 h-4 text-amber-300" />
                 <span>Come Along & Try It Free</span>

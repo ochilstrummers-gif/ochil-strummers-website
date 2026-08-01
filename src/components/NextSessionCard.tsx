@@ -94,8 +94,8 @@ export const NextSessionCard: React.FC<NextSessionCardProps> = ({ onOpenJoinModa
 
             {/* Button */}
             <button
-              onClick={onOpenJoinModal}
-              className="w-full bg-gradient-to-r from-[#6D28D9] to-[#4C1D95] hover:from-[#7C3AED] hover:to-[#5B21B6] text-[#FAF5EE] font-bold py-3.5 px-4 rounded-xl shadow-md border border-[#DDD6FE]/30 transition-all text-center text-sm flex items-center justify-center gap-2"
+              onClick={() => { window.open('https://heartfelt-biscotti-1bbd29.netlify.app/forms/join.html', '_blank'); }}
+              className="w-full bg-gradient-to-r from-[#6D28D9] to-[#4C1D95] hover:from-[#7C3AED] hover:to-[#5B21B6] text-[#FAF5EE] font-bold py-3.5 px-4 rounded-xl shadow-md border border-[#DDD6FE]/30 transition-all text-center text-sm flex items-center justify-center gap-2 cursor-pointer"
             >
               <Sparkles className="w-4 h-4 text-amber-300" />
               <span>Reserve a Free Beginner Spot</span>

@@ -107,35 +107,70 @@ export const AboutUsPage: React.FC<AboutUsPageProps> = ({
             </div>
           </div>
 
-          {/* Right Image Card Column */}
+          {/* Right Image Card Column - Replaced with an elegant premium CSS visual placeholder */}
           <div className="lg:col-span-5 relative mt-2 lg:mt-0">
-            <div className="relative rounded-[28px] overflow-hidden shadow-2xl bg-[#3A1554]">
-              <img
-                src={pubSessionPhoto}
-                alt="The Johnstone Arms, Alva - Ochil Strummers Rehearsal Home"
-                className="w-full h-[450px] sm:h-[520px] object-cover"
-                referrerPolicy="no-referrer"
-              />
+            <div className="relative rounded-[28px] overflow-hidden shadow-2xl bg-gradient-to-br from-[#4C1D95] via-[#3A1554] to-[#1E0B2E] p-8 text-white h-[450px] sm:h-[520px] flex flex-col justify-between border border-purple-500/20">
               
-              {/* Bottom Gradient Overlay & Text */}
-              <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-[#2A0F3D] via-[#2A0F3D]/80 to-transparent p-6 sm:p-8 pt-16 text-white">
-                <h3 className="text-2xl sm:text-3xl font-serif font-bold text-white mb-1">
-                  The Johnstone Arms, Alva
+              {/* Decorative Background Elements */}
+              <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_right,rgba(251,191,36,0.15),transparent_60%)] pointer-events-none" />
+              <div className="absolute top-10 right-10 opacity-10 pointer-events-none">
+                <Music className="w-32 h-32 text-white" />
+              </div>
+
+              {/* Top part: Badges and Header */}
+              <div className="relative z-10 space-y-4">
+                <div className="inline-flex items-center gap-1.5 bg-amber-400/20 text-amber-300 text-xs font-bold px-3 py-1 rounded-full border border-amber-400/30">
+                  <MapPin className="w-3.5 h-3.5" />
+                  <span>ALVA REHEARSAL HOME</span>
+                </div>
+                
+                <h3 className="text-3xl sm:text-4xl font-serif font-black text-white leading-tight">
+                  The Johnstone Arms
                 </h3>
-                <p className="text-amber-200 text-sm font-medium">
-                  Our friendly Monday evening rehearsal home
+                <p className="text-purple-200 text-sm leading-relaxed max-w-sm">
+                  Our welcoming and atmospheric Monday evening gathering space where the strumming circle comes alive.
                 </p>
               </div>
+
+              {/* Middle details panel */}
+              <div className="relative z-10 space-y-3 bg-[#2A0F3D]/50 backdrop-blur-xs p-5 rounded-2xl border border-white/5">
+                <div className="flex items-center gap-3">
+                  <Clock className="w-5 h-5 text-amber-300" />
+                  <div>
+                    <h4 className="text-xs font-bold uppercase tracking-wider text-purple-300">When We Meet</h4>
+                    <p className="text-sm font-semibold">Mondays, 7:00 PM – 9:00 PM</p>
+                  </div>
+                </div>
+
+                <div className="flex items-center gap-3">
+                  <Coffee className="w-5 h-5 text-amber-300" />
+                  <div>
+                    <h4 className="text-xs font-bold uppercase tracking-wider text-purple-300">Social Aspect</h4>
+                    <p className="text-sm font-semibold">Drinks, laughs &amp; chat during interval</p>
+                  </div>
+                </div>
+              </div>
+
+              {/* Bottom tag line */}
+              <div className="relative z-10 flex items-center justify-between border-t border-white/10 pt-4">
+                <div className="text-xs font-bold text-amber-300 uppercase tracking-wider">
+                  No Auditions • All Welcome
+                </div>
+                <div className="text-xs text-purple-200">
+                  Clackmannanshire, Scotland
+                </div>
+              </div>
+
             </div>
           </div>
 
         </div>
       </section>
 
-      <hr className="border-gray-200 max-w-7xl mx-auto my-4 opacity-60" />
+      <hr className="border-gray-200 max-w-7xl mx-auto my-2 opacity-60" />
 
       {/* 2. SECTION: OUR JOURNEY */}
-      <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 sm:py-16">
+      <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-4 pb-12 sm:pt-6 sm:pb-16">
         <h2 className="text-3xl sm:text-4xl font-serif font-bold text-[#3A1554] mb-8">
           Our Journey
         </h2>
@@ -206,7 +241,7 @@ export const AboutUsPage: React.FC<AboutUsPageProps> = ({
       </section>
 
       {/* 3. SECTION: OUR MISSION */}
-      <section className="bg-[#F6F3EB] py-16 border-t border-b border-gray-200/60">
+      <section className="bg-[#F6F3EB] pt-8 pb-16 border-t border-b border-gray-200/60">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           
           <div className="mb-3">
@@ -337,7 +372,7 @@ export const AboutUsPage: React.FC<AboutUsPageProps> = ({
       </section>
 
       {/* 4. SECTION: WHAT MAKES US DIFFERENT */}
-      <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 text-center">
+      <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-8 pb-16 text-center">
         
         <div className="mb-3">
           <span className="inline-block bg-[#F2EDE4] text-[#3A1554] text-xs font-bold uppercase tracking-wider px-4 py-1.5 rounded-full">
@@ -438,7 +473,7 @@ export const AboutUsPage: React.FC<AboutUsPageProps> = ({
       </section>
 
       {/* 5. SECTION: MEET OUR COMMITTEE */}
-      <section className="bg-[#F6F3EB] py-16 border-t border-b border-gray-200/60">
+      <section className="bg-[#F6F3EB] pt-8 pb-16 border-t border-b border-gray-200/60">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           
           <div className="mb-3">
@@ -463,13 +498,43 @@ export const AboutUsPage: React.FC<AboutUsPageProps> = ({
             </p>
           </div>
 
-          {/* Committee Grid */}
+          {/* Committee Grid - Restructured into a clean 5-person grid */}
           <div className="space-y-6 text-left">
             
-            {/* Top Row: 3 Members */}
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-6">
               
-              {/* Member 1: Linda Nisbet */}
+              {/* Member 1: Pauline Sutton */}
+              <div className="bg-white rounded-2xl border border-gray-200/80 overflow-hidden shadow-xs flex flex-col justify-between">
+                <div>
+                  {/* Photo Placeholder */}
+                  <div className="bg-[#EFECE6] h-48 relative flex flex-col items-center justify-center text-gray-500">
+                    <span className="absolute top-3 right-3 bg-[#3A1554] text-white text-[11px] font-medium px-3 py-1 rounded-full shadow-2xs">
+                      Concert Ukulele &amp; Cajon
+                    </span>
+                    <UserPlus className="w-8 h-8 text-[#3A1554]/60 mb-1" />
+                    <span className="font-serif text-sm font-bold text-[#3A1554]/80">Photo to be added</span>
+                  </div>
+                  
+                  {/* Content */}
+                  <div className="p-6 space-y-2">
+                    <h3 className="text-xl font-serif font-bold text-[#3A1554]">
+                      Pauline Sutton
+                    </h3>
+                    <p className="text-xs font-bold text-[#3A1554] uppercase tracking-wider">
+                      VICE CHAIRPERSON &amp; BAND LEADER
+                    </p>
+                    <p className="text-gray-600 text-xs sm:text-sm leading-relaxed pt-2">
+                      Helping to shape the future of the group and encouraging players of all abilities, creating an enjoyable rehearsal environment, and leading performances that showcase the band's spirit and dedication.
+                    </p>
+                  </div>
+                </div>
+
+                <div className="px-6 py-4 border-t border-gray-100 text-xs text-gray-500">
+                  Member since: 2025
+                </div>
+              </div>
+
+              {/* Member 2: Linda Nisbet */}
               <div className="bg-white rounded-2xl border border-gray-200/80 overflow-hidden shadow-xs flex flex-col justify-between">
                 <div>
                   {/* Photo Placeholder */}
@@ -500,37 +565,6 @@ export const AboutUsPage: React.FC<AboutUsPageProps> = ({
                 </div>
               </div>
 
-              {/* Member 2: Pauline Sutton */}
-              <div className="bg-white rounded-2xl border border-gray-200/80 overflow-hidden shadow-xs flex flex-col justify-between">
-                <div>
-                  {/* Photo Placeholder */}
-                  <div className="bg-[#EFECE6] h-48 relative flex flex-col items-center justify-center text-gray-500">
-                    <span className="absolute top-3 right-3 bg-[#3A1554] text-white text-[11px] font-medium px-3 py-1 rounded-full shadow-2xs">
-                      Concert Ukulele &amp; Cajon
-                    </span>
-                    <UserPlus className="w-8 h-8 text-[#3A1554]/60 mb-1" />
-                    <span className="font-serif text-sm font-bold text-[#3A1554]/80">Photo to be added</span>
-                  </div>
-                  
-                  {/* Content */}
-                  <div className="p-6 space-y-2">
-                    <h3 className="text-xl font-serif font-bold text-[#3A1554]">
-                      Pauline Sutton
-                    </h3>
-                    <p className="text-xs font-bold text-[#3A1554] uppercase tracking-wider">
-                      VICE CHAIRPERSON &amp; BAND LEADER
-                    </p>
-                    <p className="text-gray-600 text-xs sm:text-sm leading-relaxed pt-2">
-                      TBA
-                    </p>
-                  </div>
-                </div>
-
-                <div className="px-6 py-4 border-t border-gray-100 text-xs text-gray-500">
-                  Member since: 2025
-                </div>
-              </div>
-
               {/* Member 3: Chris Matheson */}
               <div className="bg-white rounded-2xl border border-gray-200/80 overflow-hidden shadow-xs flex flex-col justify-between">
                 <div>
@@ -552,7 +586,7 @@ export const AboutUsPage: React.FC<AboutUsPageProps> = ({
                       GIG ORGANISER
                     </p>
                     <p className="text-gray-600 text-xs sm:text-sm leading-relaxed pt-2">
-                      TBA
+                      Coordinating our external performances, charity outings, and community concerts, ensuring we are set up for success and ready to entertain.
                     </p>
                   </div>
                 </div>
@@ -562,12 +596,7 @@ export const AboutUsPage: React.FC<AboutUsPageProps> = ({
                 </div>
               </div>
 
-            </div>
-
-            {/* Bottom Row: 2 Members Centered */}
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-4xl mx-auto">
-              
-              {/* Member 4: Emma Robinson */}
+              {/* Member 3: Emma Robinson */}
               <div className="bg-white rounded-2xl border border-gray-200/80 overflow-hidden shadow-xs flex flex-col justify-between">
                 <div>
                   {/* Photo Placeholder */}
@@ -588,7 +617,7 @@ export const AboutUsPage: React.FC<AboutUsPageProps> = ({
                       TREASURER
                     </p>
                     <p className="text-gray-600 text-xs sm:text-sm leading-relaxed pt-2">
-                      TBA
+                      Carefully managing the band's finances, subscriptions, and fundraising income, ensuring they are transparently reinvested back into the club.
                     </p>
                   </div>
                 </div>
@@ -598,7 +627,7 @@ export const AboutUsPage: React.FC<AboutUsPageProps> = ({
                 </div>
               </div>
 
-              {/* Member 5: Janet Cheetham */}
+              {/* Member 4: Janet Cheetham */}
               <div className="bg-white rounded-2xl border border-gray-200/80 overflow-hidden shadow-xs flex flex-col justify-between">
                 <div>
                   {/* Photo Placeholder */}
@@ -619,7 +648,7 @@ export const AboutUsPage: React.FC<AboutUsPageProps> = ({
                       SECRETARY
                     </p>
                     <p className="text-gray-600 text-xs sm:text-sm leading-relaxed pt-2">
-                      TBA
+                      Managing our general admin, membership records, minutes, and communications, ensuring the day-to-day operations run smoothly.
                     </p>
                   </div>
                 </div>

@@ -30,6 +30,8 @@ export function App() {
       setActiveModal(null); // Dedicated page view instead of modal
     } else if (navItem === 'MEMBERS' || navItem === 'SONGBOOK') {
       setActiveModal(null); // Dedicated Members page view
+    } else if (navItem === 'WORKSHOPS' || navItem === 'MARKETPLACE') {
+      setActiveModal(null); // Dedicated views
     } else if (navItem === 'ABOUT US') {
       setActiveModal(null); // Dedicated page view instead of modal
     } else if (navItem === 'GALLERY') {

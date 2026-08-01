@@ -86,10 +86,10 @@ export const Footer: React.FC<FooterProps> = ({ onOpenJoinModal, onScrollToSecti
               Never played before? We have 8 loaner ukuleles waiting for you this Monday evening.
             </p>
             <button
-              onClick={onOpenJoinModal}
-              className="w-full bg-[#4C1D95] hover:bg-[#6D28D9] text-[#FAF5EE] font-bold py-2.5 px-4 rounded-xl text-xs border border-[#DDD6FE]/30 transition-all shadow-md"
+              onClick={() => { window.open('https://heartfelt-biscotti-1bbd29.netlify.app/forms/join.html', '_blank'); }}
+              className="w-full bg-[#4C1D95] hover:bg-[#6D28D9] text-[#FAF5EE] font-bold py-2.5 px-4 rounded-xl text-xs border border-[#DDD6FE]/30 transition-all shadow-md cursor-pointer"
             >
-              Reserve a Loaner Ukulele
+              Join Us / Reserve a Loaner
             </button>
           </div>
 
