@@ -21,6 +21,7 @@ import {
 import logoBadge from '../assets/images/ochil_logo_badge_1785148841944.jpg';
 import thistlePhoto from '../assets/images/gallery_thistle_flower_1785148905098.jpg';
 import pubSessionPhoto from '../assets/images/ukulele_pub_session_1785257120765.jpg';
+import alvaRehearsalPhoto from '../assets/images/gallery_outdoor_monument_1785148882137.jpg';
 
 export interface AboutUsPageProps {
   onOpenContact?: () => void;
@@ -107,13 +108,22 @@ export const AboutUsPage: React.FC<AboutUsPageProps> = ({
             </div>
           </div>
 
-          {/* Right Image Card Column - Replaced with an elegant premium CSS visual placeholder */}
+          {/* Right Image Card Column - Replaced with Alva rehearsal home image background */}
           <div className="lg:col-span-5 relative mt-2 lg:mt-0">
-            <div className="relative rounded-[28px] overflow-hidden shadow-2xl bg-gradient-to-br from-[#4C1D95] via-[#3A1554] to-[#1E0B2E] p-8 text-white h-[450px] sm:h-[520px] flex flex-col justify-between border border-purple-500/20">
+            <div className="relative rounded-[28px] overflow-hidden shadow-2xl p-8 text-white h-[450px] sm:h-[520px] flex flex-col justify-between border border-purple-500/20">
+              
+              {/* Background Image and Overlays */}
+              <img 
+                src={alvaRehearsalPhoto} 
+                alt="Alva Rehearsal Home" 
+                className="absolute inset-0 w-full h-full object-cover z-0"
+                referrerPolicy="no-referrer"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-[#200A30]/95 via-[#3A1554]/70 to-[#4C1D95]/40 z-10" />
               
               {/* Decorative Background Elements */}
-              <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_right,rgba(251,191,36,0.15),transparent_60%)] pointer-events-none" />
-              <div className="absolute top-10 right-10 opacity-10 pointer-events-none">
+              <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_right,rgba(251,191,36,0.15),transparent_60%)] pointer-events-none z-10" />
+              <div className="absolute top-10 right-10 opacity-20 pointer-events-none z-10">
                 <Music className="w-32 h-32 text-white" />
               </div>
 

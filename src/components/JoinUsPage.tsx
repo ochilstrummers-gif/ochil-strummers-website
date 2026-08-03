@@ -13,20 +13,16 @@ import {
   ArrowRight 
 } from 'lucide-react';
 import logoBadge from '../assets/images/ochil_logo_badge_1785148841944.jpg';
-import ochilUkuleleImg from '../assets/images/ochil_hero_ukulele_1785147316608.jpg';
-import indoorPhoto from '../assets/images/gallery_indoor_group_1785148867749.jpg';
+import groupshotImg from '../assets/images/Groupshot.jpg';
 
 interface JoinUsPageProps {
   onOpenContact: () => void;
   onNavigateHome: () => void;
 }
 
-export const JoinUsPage: React.FC<JoinUsPageProps> = ({ onOpenContact, onNavigateHome }) => {
-  const scrollToForm = () => {
-    const element = document.getElementById('join-form-section');
-    if (element) {
-      element.scrollIntoView({ behavior: 'smooth', block: 'start' });
-    }
+export const JoinUsPage: React.FC<JoinUsPageProps> = ({ onOpenContact }) => {
+  const handleOpenJoinForm = () => {
+    window.open('https://heartfelt-biscotti-1bbd29.netlify.app/forms/join.html', '_blank');
   };
 
   return (
@@ -108,7 +104,7 @@ export const JoinUsPage: React.FC<JoinUsPageProps> = ({ onOpenContact, onNavigat
             {/* Prominent Action Button */}
             <div className="pt-4 flex flex-wrap items-center gap-4">
               <button
-                onClick={scrollToForm}
+                onClick={handleOpenJoinForm}
                 className="bg-[#596C34] hover:bg-[#4C5E2C] text-white px-8 py-4 rounded-xl font-extrabold text-sm sm:text-base uppercase tracking-wider shadow-lg transition-all active:scale-95 flex items-center gap-3 cursor-pointer"
               >
                 <Users className="w-5 h-5" />
@@ -130,8 +126,8 @@ export const JoinUsPage: React.FC<JoinUsPageProps> = ({ onOpenContact, onNavigat
           <div className="lg:col-span-5">
             <div className="relative rounded-3xl overflow-hidden shadow-xl border-4 border-white bg-[#2F1045] group">
               <img
-                src={ochilUkuleleImg}
-                alt="Ukuleles at the Ochil Hills"
+                src={groupshotImg}
+                alt="Ochil Strummers Group Shot"
                 className="w-full h-[420px] object-cover group-hover:scale-105 transition-transform duration-500"
                 referrerPolicy="no-referrer"
               />
@@ -150,7 +146,7 @@ export const JoinUsPage: React.FC<JoinUsPageProps> = ({ onOpenContact, onNavigat
       </section>
 
       {/* 3. Session Details & What to Expect Cards */}
-      <section className="bg-white py-12 sm:py-16 border-t border-b border-gray-200">
+      <section className="bg-white py-12 sm:py-16 border-t border-gray-200">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-10">
           
           <div className="text-center max-w-2xl mx-auto space-y-2">
@@ -215,7 +211,7 @@ export const JoinUsPage: React.FC<JoinUsPageProps> = ({ onOpenContact, onNavigat
             </div>
 
             <button
-              onClick={scrollToForm}
+              onClick={handleOpenJoinForm}
               className="bg-[#596C34] hover:bg-[#4C5E2C] text-white font-black px-8 py-4 rounded-xl text-xs sm:text-sm uppercase tracking-wider shadow-lg transition-all active:scale-95 shrink-0 cursor-pointer flex items-center gap-2"
             >
               <Users className="w-4 h-4" />
@@ -223,45 +219,6 @@ export const JoinUsPage: React.FC<JoinUsPageProps> = ({ onOpenContact, onNavigat
             </button>
           </div>
 
-        </div>
-      </section>
-
-      {/* 4. Embedded Registration Form Section */}
-      <section id="join-form-section" className="py-12 sm:py-16 bg-[#F4F2E9] border-t border-gray-200">
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 space-y-6">
-          <div className="bg-white rounded-3xl p-6 sm:p-10 border border-gray-200 shadow-xl space-y-6">
-            <div className="text-center max-w-2xl mx-auto space-y-2">
-              <span className="inline-block bg-[#EBF0E1] text-[#596C34] text-xs font-bold uppercase tracking-wider px-3.5 py-1 rounded-full border border-green-200">
-                Online Membership Form
-              </span>
-              <h2 className="text-2xl sm:text-3xl font-black font-serif text-[#3A1554]">
-                Register with Ochil Strummers
-              </h2>
-              <p className="text-xs sm:text-sm text-gray-600">
-                Please fill in your details in the secure form below to join our group. If you have trouble viewing the form, you can also{' '}
-                <a
-                  href="https://heartfelt-biscotti-1bbd29.netlify.app/forms/join.html"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="text-[#3A1554] font-bold underline hover:text-[#5C1D7A]"
-                >
-                  open the form directly in a new tab
-                </a>
-                .
-              </p>
-            </div>
-
-            {/* Form iframe container */}
-            <div className="relative w-full overflow-hidden rounded-2xl border border-gray-200 bg-white h-[680px] sm:h-[720px] md:h-[760px] shadow-inner">
-              <iframe
-                src="https://heartfelt-biscotti-1bbd29.netlify.app/forms/join.html"
-                title="Ochil Strummers Registration Form"
-                className="absolute inset-0 w-full h-full border-0"
-                referrerPolicy="no-referrer"
-                sandbox="allow-forms allow-scripts allow-same-origin allow-popups"
-              />
-            </div>
-          </div>
         </div>
       </section>
 

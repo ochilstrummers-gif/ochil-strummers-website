@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Facebook, Instagram, Mail, Menu, X, Youtube } from 'lucide-react';
+import { Facebook, Instagram, Menu, X } from 'lucide-react';
 
 interface HeaderProps {
   activeNav: string;
@@ -101,24 +101,6 @@ export const Header: React.FC<HeaderProps> = ({ activeNav, setActiveNav, onOpenC
             >
               <TikTokIcon className="w-3.5 h-3.5 sm:w-4 sm:h-4" />
             </a>
-
-            <a
-              href="https://youtube.com"
-              target="_blank"
-              rel="noreferrer"
-              className="w-8 h-8 sm:w-10 sm:h-10 rounded-full bg-[#3A1554] text-white flex items-center justify-center hover:bg-[#5C1D7A] transition-colors shadow-xs"
-              aria-label="YouTube Channel"
-            >
-              <Youtube className="w-4 h-4 sm:w-5 sm:h-5" />
-            </a>
-
-            <button
-              onClick={onOpenContact}
-              className="w-8 h-8 sm:w-10 sm:h-10 rounded-full bg-[#3A1554] text-white flex items-center justify-center hover:bg-[#5C1D7A] transition-colors shadow-xs cursor-pointer"
-              aria-label="Contact Email"
-            >
-              <Mail className="w-4 h-4 sm:w-5 sm:h-5" />
-            </button>
 
             {/* Mobile Menu Button */}
             <button

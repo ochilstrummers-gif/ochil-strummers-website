@@ -73,20 +73,6 @@ export interface GigSetlist {
 
 const INITIAL_SETLISTS: GigSetlist[] = [
   {
-    id: 'set-1',
-    title: 'Monday Night Rehearsal Setlist',
-    date: 'Rehearsals Weekly at 7:30 PM',
-    location: 'The Johnstone Arms, Alva',
-    status: 'UPCOMING',
-    songs: [
-      { title: 'Loch Lomond', originalArtist: 'Traditional Scottish', key: 'C', tempo: '120 bpm', strumPattern: 'Calypso Strum (D D-U U-D-U)', notes: 'Our core club anthem. Practice the key transitions on the chorus.' },
-      { title: "I'm Gonna Be (500 Miles)", originalArtist: 'The Proclaimers', key: 'E', tempo: '132 bpm', strumPattern: 'Driving 4/4 March', notes: 'Keep a fast steady tempo. Staccato strums on verses.' },
-      { title: 'Wild Mountain Thyme', originalArtist: 'Traditional Scottish', key: 'G', tempo: '90 bpm', strumPattern: '3/4 Waltz Strum (D D U)', notes: 'Arpeggiated fingerstyle pattern optional for intro.' },
-      { title: 'Dirty Old Town', originalArtist: 'The Pogues / Ewan MacColl', key: 'G', tempo: '105 bpm', strumPattern: 'Steady Folk (D D U D D U)', notes: 'Transition to key of C on the third verse.' },
-      { title: 'Sloop John B', originalArtist: 'The Beach Boys', key: 'G', tempo: '122 bpm', strumPattern: 'Calypso Strum', notes: 'Focus on clean C to D7 changes in the chorus.' }
-    ]
-  },
-  {
     id: 'set-2',
     title: 'Alva Games Community Gala Live Set',
     date: 'Saturday, August 15, 2026 at 2:30 PM',
@@ -122,7 +108,7 @@ export const MembersPage: React.FC<MembersPageProps> = ({ onOpenContact, onNavig
   // Tab State for Logged In Member Portal
   const [activeTab, setActiveTab] = useState<'SONGBOOKS' | 'SETLISTS' | 'MARKETPLACE' | 'WORKSHOPS'>('SONGBOOKS');
   const [setlists, setSetlists] = useState<GigSetlist[]>(INITIAL_SETLISTS);
-  const [selectedSetlistId, setSelectedSetlistId] = useState<string>('set-1');
+  const [selectedSetlistId, setSelectedSetlistId] = useState<string>('set-2');
   const [selectedSongDetails, setSelectedSongDetails] = useState<SetlistSong | null>(null);
 
   // Setlists Modal State (Committee / Leader Authority)
@@ -673,18 +659,6 @@ But I would walk 500 miles, and I would walk 500 more!</div>
               </p>
             </div>
 
-            {/* Right Column: Logo Badge */}
-            <div className="shrink-0 flex items-center gap-4">
-              <div className="w-16 h-16 sm:w-20 sm:h-20 rounded-full overflow-hidden border-2 border-amber-300/80 shadow-lg bg-white shrink-0">
-                <img 
-                  src={logoBadge} 
-                  alt="Ochil Strummers Logo" 
-                  className="w-full h-full object-cover" 
-                  referrerPolicy="no-referrer"
-                />
-              </div>
-            </div>
-
           </div>
         </div>
       </section>
@@ -1023,9 +997,6 @@ But I would walk 500 miles, and I would walk 500 more!</div>
                     Current Songbook
                   </h3>
                 </div>
-                <p className="text-xs sm:text-sm text-gray-600 max-w-md">
-                  Our latest 2026 rehearsal editions and gig performance books. Standard GCEA &amp; Baritone DGBE chords included.
-                </p>
               </div>
 
               <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">

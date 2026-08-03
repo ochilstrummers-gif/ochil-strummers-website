@@ -1,10 +1,10 @@
 import React, { useState } from 'react';
 import { X, Calendar, MapPin, Music, Volume2, Sparkles, Check } from 'lucide-react';
 import { playStrumChord } from '../utils/audioTuner';
-import photo1 from '../assets/images/photo1.jpeg';
-import photo2 from '../assets/images/photo2.jpeg';
-import photo3 from '../assets/images/photo3.jpeg';
-import photo4 from '../assets/images/photo4.jpeg';
+import photo1 from '../assets/images/gallery_outdoor_monument_1785148882137.jpg';
+import photo2 from '../assets/images/ukulele_pub_session_1785257120765.jpg';
+import photo3 from '../assets/images/gallery_indoor_group_1785148867749.jpg';
+import photo4 from '../assets/images/gallery_women_strummers_1785148893490.jpg';
 
 interface ModalProps {
   type: 'CONTACT' | 'EVENTS' | 'SONGBOOK' | 'ABOUT' | 'GALLERY' | null;
